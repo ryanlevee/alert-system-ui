@@ -1,38 +1,8 @@
-[[headers]]
-  for = "/*"
-    [headers.values]
-      Content-Type = "text/html; charset=UTF-8"
-
-[[headers]]
-  for = "*.js"
-    [headers.values]
-      Content-Type = "application/javascript"
-
-[[headers]]
-  for = "*.ttf"
-    [headers.values]
-      Content-Type = "font/ttf"
+[build]
+  publish = "dist"
+  command = "npm run build"
 
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
-  conditions = { Type = "path", Splat = ":path", "!Path" = "/assets/index-C5TQ5fXf.js" }
-
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
-  conditions = { Type = "path", Splat = ":path", "!Path" = "/assets/index-BBVntlUM.css" }
-
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
-  conditions = { Type = "path", Splat = ":path", "!Path" = "/vite.svg" }
-
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
-  conditions = { Type = "path", Splat = ":path", "!Path" = "/fonts/*" }
