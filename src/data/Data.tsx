@@ -51,7 +51,6 @@ const DataComponent: React.FC = () => {
     const [filterEventType, setFilterEventType] = useState<string | null>(null);
     const [displayLimit, setDisplayLimit] = useState<string | null>(null);
 
-
     const [selectedTab, setSelectedTab] = useState<string | null>(null);
 
     const handleTabChange = useCallback(
@@ -153,8 +152,6 @@ const DataComponent: React.FC = () => {
                 <div className="select-container">
                     <div id="filter-container-outer">
                         <div className="filter-container-inner">
-                            {
-}
                             <div>
                                 <Select
                                     options={[
@@ -282,7 +279,10 @@ const DataComponent: React.FC = () => {
                         }
                     })()}
                 </CardsCategoryContainer>
-                <CardsAllContainer $selectedTab={selectedTab} id="cards-all-container">
+                <CardsAllContainer
+                    $selectedTab={selectedTab}
+                    id="cards-all-container"
+                >
                     {(() => {
                         if (selectedTab == 'All') {
                             return (

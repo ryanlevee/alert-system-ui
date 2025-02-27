@@ -33,8 +33,7 @@
 .leaflet-control-layers-overlays {
     display: flex;
     flex-direction: row;
-    width: 180px;
-    gap: 0.5rem;
+    width: 173px;
     justify-content: center;
 }
 
@@ -46,12 +45,10 @@
 .leaflet-control-layers-toggle {
     background-color: #faf9fb;
     border-radius: 5px;
-    border: 1px solid lightgray;
 }
 
 .leaflet-control-layers label {
     cursor: pointer;
-    gap: 0.5rem;
     border: none;
 
     transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);

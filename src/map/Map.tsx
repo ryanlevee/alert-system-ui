@@ -1,4 +1,3 @@
-import { DivIcon, Icon, LatLng, Marker as Marky } from 'leaflet';
 import HeatmapOverlay from 'keli-heatmap.js/plugins/leaflet-heatmap';
 import L, {
     IconOptions,
@@ -10,7 +9,7 @@ import icon from 'leaflet/dist/images/marker-icon.png';
 import iconShadow from 'leaflet/dist/images/marker-shadow.png';
 import 'leaflet/dist/leaflet.css';
 import React, { JSX, useCallback, useEffect, useState } from 'react';
-import { FaBell, FaClinicMedical } from 'react-icons/fa';
+import { FaBell } from 'react-icons/fa';
 import {
     LayerGroup,
     LayersControl,
@@ -24,12 +23,12 @@ import {
 import Select, { ActionMeta, SingleValue } from 'react-select';
 import Legend from './Legend';
 
+import styled from 'styled-components';
 import {
     EventCategory,
     EventCategoryName,
     eventData,
 } from '../interfaces/interfaces';
-import styled from 'styled-components';
 
 interface LeafletIcon extends L.Icon {}
 

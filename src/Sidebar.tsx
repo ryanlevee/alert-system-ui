@@ -60,7 +60,7 @@ const CollapsibleSidebar: React.FC<CollapsibleSidebarProps> = ({
 
     const navItems = [
         { key: "home", label: "Home", icon: <FaHome /> },
-        { key: "map", label: "Map", icon: <FaMap /> },
+        { key: "map", label: "Map View", icon: <FaMap /> },
         { key: "events", label: "Event Tracker", icon: <FaCalendarAlt /> },
         { key: "data", label: "Data Dashboard", icon: <FaDatabase /> },
         { key: "settings", label: "Settings", icon: <FaSettings /> },
