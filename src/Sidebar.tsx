@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useState } from 'react';
 import {
     FaCalendarAlt,
     FaChevronCircleLeft,
@@ -8,13 +8,13 @@ import {
     FaInfoCircle,
     FaMap,
     FaRegSun as FaSettings,
-} from "react-icons/fa";
-import styled from "styled-components";
+} from 'react-icons/fa';
+import styled from 'styled-components';
 
 interface CollapsibleSidebarProps {
     children?: React.ReactNode;
     onPageChange: (pageName: string) => void;
-    currentPage: string; // <--- Add currentPage to props interface
+    currentPage: string;
 }
 
 interface SidebarItemProps {
@@ -22,7 +22,7 @@ interface SidebarItemProps {
     $collapsed: boolean;
     className?: string;
     onPageChange: (pageName: string) => void;
-    currentPage: string; // <--- Add currentPage to props interface
+    currentPage: string;
 }
 
 const SidebarItem: React.FC<SidebarItemProps> = ({
@@ -41,7 +41,7 @@ const SidebarItem: React.FC<SidebarItemProps> = ({
             onClick={handleClick}
             className={`${className} sidebar-item`}
             key={item.key}
-            $activePage={item.key === currentPage} // <---  Pass $activePage prop here, based on currentPage
+            $activePage={item.key === currentPage}
         >
             <SidebarLink href="#" label={item.label}>
                 {item.icon}
@@ -56,15 +56,13 @@ const CollapsibleSidebar: React.FC<CollapsibleSidebarProps> = ({
     onPageChange,
     currentPage,
 }) => {
-    // <--- Accept currentPage prop
-
     const navItems = [
-        { key: "home", label: "Home", icon: <FaHome /> },
-        { key: "map", label: "Map View", icon: <FaMap /> },
-        { key: "events", label: "Event Tracker", icon: <FaCalendarAlt /> },
-        { key: "data", label: "Data Dashboard", icon: <FaDatabase /> },
-        { key: "settings", label: "Settings", icon: <FaSettings /> },
-        { key: "about", label: "About", icon: <FaInfoCircle /> },
+        { key: 'home', label: 'Home', icon: <FaHome /> },
+        { key: 'map', label: 'Map View', icon: <FaMap /> },
+        { key: 'events', label: 'Event Tracker', icon: <FaCalendarAlt /> },
+        { key: 'data', label: 'Data Dashboard', icon: <FaDatabase /> },
+        { key: 'settings', label: 'Settings', icon: <FaSettings /> },
+        { key: 'about', label: 'About', icon: <FaInfoCircle /> },
     ];
 
     const [isCollapsed, setIsCollapsed] = useState<boolean>(false);
@@ -78,8 +76,8 @@ const CollapsibleSidebar: React.FC<CollapsibleSidebarProps> = ({
             $collapsed={isCollapsed}
             className={
                 isCollapsed
-                    ? "sidebar-container collapsed"
-                    : "sidebar-container"
+                    ? 'sidebar-container collapsed'
+                    : 'sidebar-container'
             }
         >
             <CollapseToggleButton
@@ -94,13 +92,13 @@ const CollapsibleSidebar: React.FC<CollapsibleSidebarProps> = ({
             </CollapseToggleButton>
 
             <SidebarNav $collapsed={isCollapsed}>
-                {navItems.map((item) => (
+                {navItems.map(item => (
                     <SidebarItem
                         key={item.key}
                         item={item}
                         $collapsed={isCollapsed}
                         onPageChange={onPageChange}
-                        currentPage={currentPage} // <--- Pass currentPage prop to SidebarItem
+                        currentPage={currentPage}
                     />
                 ))}
                 {children && !isCollapsed && (
@@ -116,21 +114,11 @@ export default CollapsibleSidebar;
 const SidebarContainer = styled.div<{ $collapsed: boolean }>`
     background-color: #f0f2f5;
     color: #333;
-    width: ${(props) => (props.$collapsed ? "80px" : "270px")};
+    width: ${props => (props.$collapsed ? '80px' : '270px')};
     position: relative;
-    // top: 0;
-    // left: 0;
-
-    transition:
-        // left 0.3s,
-        width 0.3s ease-in-out;
-
-    // overflow-x: hidden;
+    transition: width 0.3s ease-in-out;
     padding-top: 20px;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-    // display: flex;
-    // flex-direction: column;
-
     z-index: 100;
 `;
 
@@ -146,7 +134,6 @@ const CollapseToggleButton = styled.button<{ $collapsed: boolean }>`
     display: flex;
     align-items: center;
     justify-content: center;
-
     cursor: pointer;
 
     transition:
@@ -170,17 +157,13 @@ const StyledSidebarItem = styled.li<{ $activePage: boolean }>`
     margin: 0;
     cursor: pointer;
 
-    color: ${(props) =>
-        props.$activePage
-            ? "darkblue"
-            : "#f0f2f5"};
-    background-color: ${(props) =>
-        props.$activePage
-            ? "#e0e0e0"
-            : "none"};
+    color: ${props => (props.$activePage ? 'darkblue' : '#f0f2f5')};
+    background-color: ${props => (props.$activePage ? '#d5d5da' : 'none')};
+    // background-color: ${props => (props.$activePage ? '#e0e0e0' : 'none')};
 
     &:hover {
-        background-color: #e0e0e0;
+        background-color: #d5d5da;
+        // background-color: #e0e0e0;
     }
 
     &:hover a {
@@ -203,12 +186,7 @@ const SidebarLink = styled.a<{ label: string }>`
 
     span {
         overflow: hidden;
-        // transition:
-            // opacity 0.3s ease,
-            // margin-left 0.3s ease;
     }
 `;
 
-const SidebarContent = styled.div`
-    // padding: 20px;
-`;
+const SidebarContent = styled.div``;

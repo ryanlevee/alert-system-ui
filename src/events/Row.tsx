@@ -104,7 +104,7 @@ export const EventRow = memo(
                     className="event-row"
                 >
                     <td className="event-category-td">
-                        <div className="event-category-container">
+                        <div className={`event-category-container ${categoryName}`}>
                             <div className="event-category">
                                 <div>{categoryIcon}</div>
                                 <div

@@ -9,13 +9,21 @@ tspan {
 .tabs {
     width: 100%;
     display: flex;
+    margin-left: 20px;
 }
 
 .tabs div {
     cursor: pointer;
-    padding: 10px 15px;
-    margin-left: 20px;
+    padding: 10px 20px;
     text-align: center;
+    font-weight: 500;
+
+    &:hover {
+        background-color: #d5d5da;
+    }
+
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
 }
 
 #category-header {
@@ -24,8 +32,8 @@ tspan {
     margin: 0;
 }
 
-#cards-category-container>div,
-#cards-all-container>div {
+#cards-category-container > div,
+#cards-all-container > div {
     padding: 0 !important;
     margin: 0 !important;
 }
@@ -92,11 +100,11 @@ tspan {
     display: flex;
 }
 
-.card-graph>svg {
+.card-graph > svg {
     height: 90% !important;
 }
 
-.big-graph>svg {
+.big-graph > svg {
     height: 95% !important;
 }
 
