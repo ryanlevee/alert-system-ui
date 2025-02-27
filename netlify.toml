@@ -17,4 +17,11 @@
   from = "/*"
   to = "/index.html"
   status = 200
-  conditions = {Type = "path", Splat = ":path", "!Path" = "/assets/*"} # Exclude /assets/*
+  conditions = {
+    Type = "path",
+    Splat = ":path",
+    "!Path" = "/assets/index-C5TQ5fXf.js",  # Specific JS entrypoint
+    "!Path" = "/assets/index-BBVntlUM.css", # Specific CSS entrypoint
+    "!Path" = "/vite.svg",                  # Vite icon (if used in public)
+    "!Path" = "/fonts/*"                     # Font directory
+  }
