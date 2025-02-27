@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import ico from '../common/iconMapping';
 import { EventCategoryName, eventData } from '../interfaces/interfaces';
 import TypeCardComponent from './TypeCard';
-import categoryIndex from '../../../backend/categoryIndex.json';
+import categoryIndex from '../../backend/categoryIndex.json';
 
 const CategoryRow = styled.div`
     display: flex;

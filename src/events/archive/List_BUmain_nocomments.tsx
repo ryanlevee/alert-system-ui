@@ -1,6 +1,6 @@
 import React, { useCallback, useState } from 'react';
 import styled from 'styled-components';
-import columnIndex from '../../../../backend/columnIndex.json';
+import columnIndex from '../../../backend/columnIndex.json';
 import ico from '../../common/iconMapping';
 import { EventCategory, EventCategoryName } from '../../interfaces/interfaces';
 

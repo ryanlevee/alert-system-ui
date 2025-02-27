@@ -1,7 +1,7 @@
 import React from 'react';
 import columnIndex from '../../../backend/columnIndex.json';
-import { EventCategory, EventCategoryName } from '../interfaces/interfaces';
-import { EventRow } from './Row';
+import { EventCategory, EventCategoryName } from '../../interfaces/interfaces';
+import { EventRow } from '../Row';
 
 export type ColumnIndex = Record<string, number>;
 const colIdx = columnIndex as ColumnIndex;

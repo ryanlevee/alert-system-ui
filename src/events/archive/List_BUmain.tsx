@@ -10,7 +10,7 @@ import styled from 'styled-components';
 import { EventCategory, EventCategoryName } from '../../interfaces/interfaces';
 import ico from '../../common/iconMapping';
 import { ActionMeta, SingleValue } from 'react-select';
-import columnIndex from '../../../../backend/columnIndex.json';
+import columnIndex from '../../../backend/columnIndex.json';
 
 type ColumnIndex = Record<string, number>;
 const colIdx = columnIndex as ColumnIndex;

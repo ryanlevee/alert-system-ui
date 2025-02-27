@@ -1,5 +1,5 @@
-import data from '../../../backend/data.json';
-import categoryIndex from '../../../backend/categoryIndex.json';
+import data from '../../backend/data.json';
+import categoryIndex from '../../backend/categoryIndex.json';
 
 export interface EventDetailsBase {
     uid: number;

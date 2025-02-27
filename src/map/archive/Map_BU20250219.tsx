@@ -8,7 +8,7 @@ import icon from 'leaflet/dist/images/marker-icon.png';
 import iconShadow from 'leaflet/dist/images/marker-shadow.png';
 import { FaBell } from 'react-icons/fa';
 import Select, { ActionMeta, InputActionMeta, OptionsOrGroups, ValueMeta, SingleValue } from 'react-select';
-import data from '../../../../backend/data.json';
+import data from '../../../backend/data.json';
 import Legend from '../Legend'; // Adjust path if necessary
 
 // Re-export Layer and Map for correct type usage in useMap, useMapEvents

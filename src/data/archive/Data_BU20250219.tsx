@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import data from '../../../../backend/data.json'; // Import your JSON data
+import data from '../../../backend/data.json'; // Import your JSON data
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';
 import { FaRegStar, FaClinicMedical, FaCloudShowersHeavy, FaLightbulb, FaMeteor } from 'react-icons/fa';
 

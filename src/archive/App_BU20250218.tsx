@@ -3,7 +3,7 @@ import React, { useState, useCallback, JSX, EventHandler, MouseEventHandler } fr
 import { MapContainer, TileLayer, Marker, Popup, useMap, LayerGroup, useMapEvents, LayersControl } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import 'leaflet.heat'; // Import leaflet.heat plugin
-import data from '../../../backend/data.json';
+import data from '../../backend/data.json';
 import { LatLngExpression, Marker as LeafletMarker, IconOptions, Layer } from 'leaflet';
 // import * as HeatmapJS from 'heatmap.js'; // Import heatmap.js core library
 // import HeatmapOverlay from 'leaflet-heatmap'; // Import Leaflet HeatmapOverlay plugin  (adjust if import fails)
