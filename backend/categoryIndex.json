@@ -1,0 +1,6 @@
+{
+    "Safety": 0,
+    "Weather": 1,
+    "Operations": 2,
+    "Disaster": 3
+}

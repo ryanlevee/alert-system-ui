@@ -1,0 +1,7 @@
+{
+    "compilerOptions": {
+        "jsx": "react",
+        "resolveJsonModule": true,
+    },
+    "extends": "./node_modules/@tsconfig/recommended/tsconfig.json"
+}

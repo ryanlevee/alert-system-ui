@@ -1,0 +1,6 @@
+nav li a {
+    display: flex;
+    vertical-align: middle;
+    padding: 0;
+    margin: 0;
+}
