@@ -79,6 +79,7 @@
 .event-row {
     margin-top: 3px;
     cursor: pointer;
+    background: whitesmoke;
 }
 
 .event-row:hover {

@@ -157,7 +157,7 @@ const DataComponent: React.FC = () => {
                                     options={[
                                         {
                                             value: 'Frequency',
-                                            label: 'Frequency (default)',
+                                            label: 'Frequency',
                                         },
                                         {
                                             value: 'Alphabetical',
