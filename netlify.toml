@@ -6,9 +6,15 @@
 [[headers]]
   for = "*.js"
     [headers.values]
-      Content-Type = "application/javascript" # or "text/javascript"
+      Content-Type = "application/javascript"
 
 [[headers]]
-  for = "*.ttf" # For your font
+  for = "*.ttf"
     [headers.values]
       Content-Type = "font/ttf"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+  conditions = {Type = "path", Splat = ":path", "!Path" = "/assets/*"} # Exclude /assets/*
