@@ -159,7 +159,9 @@ function RenderGraph({
     };
 
     return (
-        <BigCardContainer>
+        <BigCardContainer
+        className='big-card-container'
+        >
             <CardTitle>All</CardTitle>
             <GraphContainer>
                 <ResponsiveContainer width="100%" height="100%">
@@ -204,7 +206,7 @@ function RenderGraph({
                     wrapperStyle={{
                         top: 5,
                         right: 5,
-                        backgroundColor: '#f5f5f5',
+                        backgroundColor: 'whitesmoke',
                         border: '1px solid #d5d5d5',
                         borderRadius: 3,
                         lineHeight: '20px',
