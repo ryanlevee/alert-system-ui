@@ -13,9 +13,10 @@ import ico from '../common/iconMapping';
 import { SeverityLevel } from './Cards';
 
 const TypeCardStyled = styled.div`
+    background-color: #f6f9ff;
     border: 1px solid #ccc;
     border-radius: 5px;
-    width: 450px;
+    width: 425px;
     height: 225px;
     box-shadow: 2px 2px 5px #eee;
     display: flex;
@@ -53,6 +54,7 @@ interface TypeCardProps {
     };
     categoryName: string;
     severityOrder: readonly SeverityLevel[];
+    isAnimated: boolean;
 }
 
 const TypeCardComponent: React.FC<TypeCardProps> = ({
@@ -60,6 +62,7 @@ const TypeCardComponent: React.FC<TypeCardProps> = ({
     typeData,
     categoryName,
     severityOrder,
+    isAnimated,
 }) => {
     const chartData = severityOrder.map(level => ({
         severity: level,
@@ -92,7 +95,7 @@ const TypeCardComponent: React.FC<TypeCardProps> = ({
 
     return (
         <TypeCardStyled
-            className={`$card-container ${categoryName}`}
+            className={`card-container ${categoryName}`}
             key={`${categoryName}-${typeName}`}
         >
             <CardTitle className="card-title-container">
@@ -142,7 +145,12 @@ const TypeCardComponent: React.FC<TypeCardProps> = ({
                             domain={[0, 8]}
                         />
                         <Tooltip />
-                        <Bar barSize={25} dataKey="count" fill="#9fc4ff" />
+                        <Bar
+                            barSize={25}
+                            dataKey="count"
+                            fill="#9fc4ff"
+                            isAnimationActive={isAnimated}
+                        />
                     </BarChart>
                 </ResponsiveContainer>
             </BarGraphContainer>

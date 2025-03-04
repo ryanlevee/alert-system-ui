@@ -7,8 +7,6 @@ import styled from 'styled-components';
 export const EventFooter = styled.div<{
     $isClicked: boolean;
 }>`
-    margin-top: 0;
-
     & .hidden-container {
         ${props =>
             props.$isClicked
@@ -104,7 +102,9 @@ export const EventRow = memo(
                     className="event-row"
                 >
                     <td className="event-category-td">
-                        <div className={`event-category-container ${categoryName}`}>
+                        <div
+                            className={`event-category-container ${categoryName}`}
+                        >
                             <div className="event-category">
                                 <div>{categoryIcon}</div>
                                 <div

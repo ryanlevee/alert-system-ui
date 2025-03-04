@@ -44,11 +44,13 @@ function RenderCards({
     selectedEventType,
     sortBy,
     displayLimit,
+    isAnimated,
 }: {
     selectedCategory: EventCategoryName;
     selectedEventType: string | null;
     sortBy: string | null;
     displayLimit: string | null;
+    isAnimated: boolean;
 }): React.ReactNode | null {
     const currentYear = new Date().getFullYear();
     const lastYear = currentYear - 1;
@@ -157,6 +159,7 @@ function RenderCards({
                                 typeData={typeData}
                                 categoryName={categoryName}
                                 severityOrder={severityOrder}
+                                isAnimated={isAnimated}
                             />
                         );
                     })}

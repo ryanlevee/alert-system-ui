@@ -1,70 +1,72 @@
 import React, { useCallback, useState } from 'react';
 import {
     FaCalendarAlt,
-    FaChevronCircleLeft,
-    FaChevronCircleRight,
+    FaChevronLeft,
+    FaChevronRight,
     FaDatabase,
     FaHome,
     FaInfoCircle,
     FaMap,
-    FaRegSun as FaSettings,
 } from 'react-icons/fa';
 import styled from 'styled-components';
 
-interface CollapsibleSidebarProps {
+interface CollapsibleNavbarProps {
     children?: React.ReactNode;
     onPageChange: (pageName: string) => void;
     currentPage: string;
+    isNight: boolean;
 }
 
-interface SidebarItemProps {
+interface NavbarItemProps {
     item: { key: string; label: string; icon: React.ReactNode };
     $collapsed: boolean;
     className?: string;
     onPageChange: (pageName: string) => void;
     currentPage: string;
+    isNight: boolean;
 }
 
-const SidebarItem: React.FC<SidebarItemProps> = ({
+const NavbarItem: React.FC<NavbarItemProps> = ({
     item,
     $collapsed,
     className,
     onPageChange,
     currentPage,
+    isNight,
 }) => {
     const handleClick = useCallback(() => {
         onPageChange(item.key);
+        console.log('whateverrrrr');
     }, [onPageChange, item.key]);
 
     return (
-        <StyledSidebarItem
+        <StyledNavbarItem
             onClick={handleClick}
-            className={`${className} sidebar-item`}
+            className={`${className} navbar-item`}
             key={item.key}
             $activePage={item.key === currentPage}
+            $isNight={isNight}
         >
-            <SidebarLink href="#" label={item.label}>
+            <NavbarLink href="#" label={item.label}>
                 {item.icon}
                 {!$collapsed && <span>{item.label}</span>}
-            </SidebarLink>
-        </StyledSidebarItem>
+            </NavbarLink>
+        </StyledNavbarItem>
     );
 };
 
-const CollapsibleSidebar: React.FC<CollapsibleSidebarProps> = ({
-    children,
+const Navbar: React.FC<CollapsibleNavbarProps> = ({
     onPageChange,
     currentPage,
+    isNight,
 }) => {
     const navItems = [
         { key: 'home', label: 'Home', icon: <FaHome /> },
         { key: 'map', label: 'Map View', icon: <FaMap /> },
         { key: 'events', label: 'Event Tracker', icon: <FaCalendarAlt /> },
         { key: 'data', label: 'Data Dashboard', icon: <FaDatabase /> },
-        { key: 'settings', label: 'Settings', icon: <FaSettings /> },
         { key: 'about', label: 'About', icon: <FaInfoCircle /> },
     ];
-
     const [isCollapsed, setIsCollapsed] = useState<boolean>(false);
 
     const toggleCollapse = useCallback(() => {
@@ -72,51 +74,45 @@ const CollapsibleSidebar: React.FC<CollapsibleSidebarProps> = ({
     }, [isCollapsed]);
 
     return (
-        <SidebarContainer
+        <NavbarContainer
             $collapsed={isCollapsed}
             className={
-                isCollapsed
-                    ? 'sidebar-container collapsed'
-                    : 'sidebar-container'
+                isCollapsed ? 'Navbar-container collapsed' : 'Navbar-container'
             }
         >
             <CollapseToggleButton
                 onClick={toggleCollapse}
                 $collapsed={isCollapsed}
+                className="collapse-toggle-button"
             >
-                {isCollapsed ? (
-                    <FaChevronCircleRight />
-                ) : (
-                    <FaChevronCircleLeft />
-                )}
+                {isCollapsed ? <FaChevronRight /> : <FaChevronLeft />}
             </CollapseToggleButton>
 
-            <SidebarNav $collapsed={isCollapsed}>
+            <NavbarNav $collapsed={isCollapsed}>
                 {navItems.map(item => (
-                    <SidebarItem
+                    <NavbarItem
                         key={item.key}
+                        className={item.key}
                         item={item}
                         $collapsed={isCollapsed}
                         onPageChange={onPageChange}
                         currentPage={currentPage}
+                        isNight={isNight}
                     />
                 ))}
-                {children && !isCollapsed && (
-                    <SidebarContent>{children}</SidebarContent>
-                )}
-            </SidebarNav>
-        </SidebarContainer>
+                {
+}
+            </NavbarNav>
+        </NavbarContainer>
     );
 };
 
-export default CollapsibleSidebar;
+export default Navbar;
 
-const SidebarContainer = styled.div<{ $collapsed: boolean }>`
-    background-color: #f0f2f5;
-    color: #333;
-    width: ${props => (props.$collapsed ? '80px' : '270px')};
+const NavbarContainer = styled.div<{ $collapsed: boolean }>`
+    width: ${props => (props.$collapsed ? '60px' : '210px')};
     position: relative;
-    transition: width 0.3s ease-in-out;
+    transition: width 0.3s ease-out;
     padding-top: 20px;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
     z-index: 100;
@@ -126,18 +122,18 @@ const CollapseToggleButton = styled.button<{ $collapsed: boolean }>`
     scale: calc(135%);
     position: absolute;
     top: 10px;
-    right: 10px;
+    right: 5px;
     border: none;
-    border-radius: 50%;
     width: 30px;
     height: 30px;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    background: transparent;
 
     transition:
-        right 0.3s ease-in-out,
+        right 0.3s easeout,
         background-color 0.3s ease;
     z-index: 10;
 
@@ -146,24 +142,25 @@ const CollapseToggleButton = styled.button<{ $collapsed: boolean }>`
     }
 `;
 
-const SidebarNav = styled.nav<{ $collapsed: boolean }>`
+const NavbarNav = styled.nav<{ $collapsed: boolean }>`
     padding: 15px 0 0 0;
     margin: 0;
     list-style: none;
     margin-top: 20px;
 `;
 
-const StyledSidebarItem = styled.li<{ $activePage: boolean }>`
+const StyledNavbarItem = styled.li<{ $activePage: boolean; $isNight: boolean }>`
     margin: 0;
     cursor: pointer;
+    display: flex;
+    padding: 10px 15px;
 
     color: ${props => (props.$activePage ? 'darkblue' : '#f0f2f5')};
-    background-color: ${props => (props.$activePage ? '#d5d5da' : 'none')};
-    // background-color: ${props => (props.$activePage ? '#e0e0e0' : 'none')};
+    background-color: ${props =>
+        props.$activePage ? (props.$isNight ? '#57575b' : '#d5d5da') : 'none'};
 
     &:hover {
         background-color: #d5d5da;
-        // background-color: #e0e0e0;
     }
 
     &:hover a {
@@ -171,22 +168,17 @@ const StyledSidebarItem = styled.li<{ $activePage: boolean }>`
     }
 `;
 
-const SidebarLink = styled.a<{ label: string }>`
-    padding: 10px 15px;
+const NavbarLink = styled.a<{ label: string }>`
+    align-items: center;
     text-decoration: none;
-    color: #333;
     transition: background-color 0.2s ease;
     white-space: nowrap;
+    overflow: hidden;
+    padding-right: 10px;
 
     svg {
         width: 20px;
         height: 20px;
         margin-right: 10px;
     }
-
-    span {
-        overflow: hidden;
-    }
 `;
-
-const SidebarContent = styled.div``;

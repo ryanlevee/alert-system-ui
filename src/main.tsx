@@ -8,6 +8,8 @@ import "./styles/home.css";
 import "./styles/index.css";
 import "./styles/map.css";
 import "./styles/sidebar.css";
+import "./styles/theme.css";
+import "./styles/animation.css";
 
 createRoot(document.getElementById("root")!).render(
     <StrictMode>

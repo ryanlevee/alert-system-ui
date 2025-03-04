@@ -1,43 +1,50 @@
-import React, { JSX, useState } from "react";
-import About from "./about/About";
-import DataComponent from "./data/Data";
-import Events from "./events/Events";
-import Home from "./home/Home"; // Adjust path if necessary
-import MapComponent from "./map/Map";
-import Settings from "./settings/Settings";
-import CollapsibleSidebar from "./Sidebar"; // Assuming Sidebar.tsx is in the same directory
+import React, { JSX, useState } from 'react';
+import About from './about/About';
+import DataComponent from './data/Data';
+import Events from './events/Events';
+import Home from './home/Home';
+import MapComponent from './map/Map';
+import Navbar from './bars/Nav';
+import Sidebar from './bars/Side';
 
 function App(): JSX.Element {
-    const [currentPage, setCurrentPage] = useState("home"); // State in App component now
+    const [currentPage, setCurrentPage] = useState('home');
+    const [isNight, setIsNight] = useState<boolean>(false);
+    const [isAnimated, setIsAnimated] = useState<boolean>(true);
 
     return (
-        <div className="app-container">
-            <CollapsibleSidebar
+        <div
+            className={`app-container night-${isNight} animation-${isAnimated}`}
+        >
+            <Navbar
                 onPageChange={setCurrentPage}
-                currentPage={currentPage} // <--- Pass the currentPage state here
-            ></CollapsibleSidebar>
+                currentPage={currentPage}
+                isNight={isNight}
+            ></Navbar>
 
-            {/* Conditionally render pages based on currentPage state */}
             {(() => {
                 switch (currentPage) {
-                    case "home":
+                    case 'home':
                         return <Home />;
-                    case "map":
+                    case 'map':
                         return <MapComponent />;
-                    case "events":
+                    case 'events':
                         return <Events />;
-                    case "data":
-                        return <DataComponent />;
-                    case "settings":
-                        return <Settings />;
-                    case "about":
+                    case 'data':
+                        return <DataComponent isAnimated={isAnimated} />;
+                    case 'about':
                         return <About />;
                     default:
-                        return <Home />; // Or a default "not found" page
+                        return <Home />;
                 }
             })()}
-
-            <div style={{width:'20%', background: '#A2A2A3'}}></div>
+            <Sidebar
+                onThemeChange={setIsNight}
+                isNight={isNight}
+                onAnimationChange={setIsAnimated}
+                isAnimated={isAnimated}
+                currentPage={currentPage}
+            ></Sidebar>
         </div>
     );
 }

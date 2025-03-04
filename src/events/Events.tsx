@@ -103,7 +103,6 @@ const DataComponent: React.FC = () => {
                 <div className="select-container">
                     <div id="filter-container-outer">
                         <div className="filter-container-inner">
-                            {}
                             <div>
                                 <Select
                                     options={availableCategories}
@@ -168,7 +167,7 @@ const DataComponent: React.FC = () => {
                     </div>
                 </div>
             </div>
-            <div className="details-container">
+            <div className="event-tracker-container">
                 <RenderList
                     isAllExpanded={isAllExpanded}
                     selectedCategory={filterCategory}

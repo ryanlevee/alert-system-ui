@@ -1,0 +1,3 @@
+body:has(div.animation-false) * {
+    transition: none !important;
+}

@@ -12,9 +12,9 @@ const DataContainer = styled.div`
 const CardsCategoryContainer = styled.div<{
     $selectedTab: string | null;
 }>`
-    background-color: #faf9fb;
-    padding: 0 !important;
-    margin: 0 !important;
+    // background-color: #faf9fb;
+    // padding: 0 !important;
+    // margin: 0 !important;
 
     ${props =>
         !props.$selectedTab || props.$selectedTab == 'Category'
@@ -28,8 +28,8 @@ const CardsAllContainer = styled.div<{
     $selectedTab: string | null;
 }>`
     background-color: #faf9fb;
-    padding: 0 !important;
-    margin: 0 !important;
+    // padding: 0 !important;
+    // margin: 0 !important;
 
     ${props =>
         props.$selectedTab == 'All'
@@ -44,7 +44,11 @@ const Tab = styled.div<{ $activeTab: boolean }>`
         props.$activeTab ? '5px solid #6c5fc7' : 'none'};
 `;
 
-const DataComponent: React.FC = () => {
+function DataComponent({
+    isAnimated,
+}: {
+    isAnimated: boolean;
+}): React.ReactNode | null {
     const [sortBy, setSortBy] = useState<string | null>(null);
     const [filterCategory, setFilterCategory] =
         useState<EventCategoryName>(null);
@@ -261,7 +265,7 @@ const DataComponent: React.FC = () => {
                     </Tab>
                 </div>
             </div>
-            <div className="details-container">
+            <div className="data-dashboard-container">
                 <CardsCategoryContainer
                     $selectedTab={selectedTab}
                     id="cards-category-container"
@@ -274,6 +278,7 @@ const DataComponent: React.FC = () => {
                                     selectedEventType={filterEventType}
                                     sortBy={sortBy}
                                     displayLimit={displayLimit}
+                                    isAnimated={isAnimated}
                                 />
                             );
                         }
@@ -290,6 +295,7 @@ const DataComponent: React.FC = () => {
                                     selectedCategory={filterCategory}
                                     selectedEventType={filterEventType}
                                     sortBy={sortBy}
+                                    isAnimated={isAnimated}
                                 />
                             );
                         }
@@ -298,6 +304,6 @@ const DataComponent: React.FC = () => {
             </div>
         </DataContainer>
     );
-};
+}
 
 export default DataComponent;

@@ -60,10 +60,12 @@ function RenderGraph({
     selectedCategory,
     selectedEventType,
     sortBy,
+    isAnimated,
 }: {
     selectedCategory: EventCategoryName;
     selectedEventType: string | null;
     sortBy: string | null;
+    isAnimated: boolean;
 }): React.ReactNode | null {
     const structuredData = eventData.reduce((acc, item) => {
         const categoryName = Object.keys(item)[0];
@@ -102,8 +104,8 @@ function RenderGraph({
         {}
     );
 
-    const graphData = Object.entries(structuredData).flatMap(
-        ([categoryName, eventTypes], i) => {
+    const graphData = Object.entries(structuredData)
+        .flatMap(([categoryName, eventTypes], i) => {
             if (selectedCategory && categoryName != selectedCategory)
                 return null;
             else if (selectedEventType && !(selectedEventType in eventTypes))
@@ -119,19 +121,16 @@ function RenderGraph({
                     name: typeName,
                 })
             );
-        }
-    );
+        })
+        .filter(Boolean);
 
-    // Sorting Logic - START
-    let sortedData = [...graphData]; // Create a copy to avoid mutating original graphData
+    let sortedData = [...graphData];
+
     if (sortBy === 'Frequency') {
-        sortedData.sort((a, b) => b.count - a.count); // Sort by count in descending order
+        sortedData.sort((a, b) => b.count - a.count);
     } else {
-        // if you want default sorting when sortBy is not 'frequency' you can add it here.
-        // For example, to sort by category name:
-        // sortedData.sort((a, b) => a.category.localeCompare(b.category));
+        //NOOP
     }
-    // Sorting Logic - END
 
     const renderLegend = () => {
         const uniqueCategories = [
@@ -159,9 +158,7 @@ function RenderGraph({
     };
 
     return (
-        <BigCardContainer
-        className='big-card-container'
-        >
+        <BigCardContainer className="big-card-container">
             <CardTitle>All</CardTitle>
             <GraphContainer>
                 <ResponsiveContainer width="100%" height="100%">
@@ -188,7 +185,8 @@ function RenderGraph({
                         <Tooltip />
                         <Bar
                             dataKey="count"
-                            //  fill={colors[0]}
+                            isAnimationActive={isAnimated}
+                            className="graph-bar"
                         >
                             {sortedData.map((entry, index) => (
                                 <Cell
@@ -201,15 +199,15 @@ function RenderGraph({
                 </ResponsiveContainer>
                 <Legend
                     width={140}
-                    height={100}
                     content={renderLegend}
                     wrapperStyle={{
                         top: 5,
                         right: 5,
-                        backgroundColor: 'whitesmoke',
                         border: '1px solid #d5d5d5',
                         borderRadius: 3,
                         lineHeight: '20px',
+                        paddingBottom: '7px',
+                        height: 'fit-content',
                     }}
                 />
             </GraphContainer>

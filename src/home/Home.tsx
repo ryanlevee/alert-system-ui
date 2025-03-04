@@ -2,7 +2,7 @@ import React from 'react';
 
 function Home() {
     return (
-        <div className="data-container">
+        <div className="data-container home-container">
             <div className="top-container">
                 <div className="headers-container">
                     <h4>

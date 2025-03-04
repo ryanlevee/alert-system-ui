@@ -2,6 +2,7 @@
     padding: 5px 45px 20px 45px;
     width: 100%;
     box-shadow: 2px 0 5px -2px #888;
+    user-select: none;
 }
 
 #create-alert-btn-container button {
@@ -25,9 +26,25 @@
 }
 
 .leaflet-container {
-    height: 79%;
-    margin: 15px;
+    height: 85%;
     border: 1.5px solid lightgrey;
+}
+
+.leaflet-popup-content-wrapper {
+    padding: 1px;
+}
+
+.leaflet-popup-content {
+    margin: 13px 24px 13px 20px;
+}
+
+.leaflet-popup-tip-container {
+    margin: -1px 0 0 -20px;
+}
+
+.leaflet-popup-tip {
+    padding: 1px;
+    margin: -10px auto 0;
 }
 
 .leaflet-control-layers-overlays {
@@ -37,8 +54,7 @@
     justify-content: center;
 }
 
-
-.leaflet-top+.leaflet-right {
+.leaflet-top + .leaflet-right {
     margin-top: 125px !important;
 }
 
@@ -75,7 +91,8 @@
     background-color: #faf9fb;
 }
 
-.leaflet-control-layers-overlays :not(:has(input[type='checkbox']:checked)):hover,
+.leaflet-control-layers-overlays
+    :not(:has(input[type='checkbox']:checked)):hover,
 .leaflet-control-layers-overlays :has(input[type='checkbox']:checked):hover,
 .leaflet-control-layers label:hover {
     background-color: #d3d3d3;

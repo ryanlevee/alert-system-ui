@@ -1,0 +1,139 @@
+body:has(div.night-true) {
+    background: #3a3a3e;
+}
+
+.app-container.night-true {
+    background: #1e1e1e;
+    color: #dadadf;
+
+    /* Bars */
+    .Navbar-container {
+        background: #3a3a3e;
+    }
+
+    .Sidebar-container {
+        background: #3a3a3e;
+    }
+
+    .Navbar-container a {
+        color: #dadadf;
+    }
+
+    .sidebar-link {
+        color: #dadadf;
+    }
+
+    .navbar-item:hover {
+        background-color: #57575b !important;
+    }
+
+    .collapse-toggle-button {
+        color: #dadadf;
+    }
+
+    /* App */
+    .top-container {
+        background: #1e1e1e;
+        color: #dadadf;
+    }
+
+    h4 {
+        color: #dadadf;
+    }
+
+    .filter-container-inner div,
+    .filter-container-inner button {
+        filter: invert(1);
+        color: #1e1e1e;
+    }
+
+    .filter-container-inner div div:has([aria-disabled='true']) * {
+        filter: invert(0) !important;
+        background: #1e1e1e;
+        color: black;
+        border: none;
+    }
+
+    .filter-container-inner div div:has([aria-disabled='true']) {
+        outline: 1px solid #444444;
+    }
+
+    #event-type-select div {
+        -webkit-transition: none !important;
+        transition: none !important;
+    }
+
+    /* Events Tracker */
+    .event-table {
+        border-radius: 0;
+    }
+
+    .event-table thead {
+        background: #2c2c2e;
+    }
+
+    .event-row {
+        background: #3a3a3e;
+    }
+
+    .hidden-container {
+        background: #2c2c2e;
+    }
+
+    .dropdown-data-key {
+        background: #1e1e1e;
+    }
+
+    .dropdown-data-value {
+        background: #2c2c2e;
+    }
+
+    /* Data Dashboard */
+    .data-dashboard-container {
+        box-shadow: 0px 0px 5px darkgray;
+    }
+
+    .tabs div {
+        &:hover {
+            background-color: #57575b;
+        }
+    }
+
+    .card-title {
+        color: whitesmoke;
+    }
+
+    #cards-category-container,
+    .card-container {
+        background-color: #1e1e1e;
+    }
+
+    .big-card-container,
+    .card-container {
+        background-color: #1e1e1e;
+        box-shadow: 1px 1px 3px gray;
+        border: 1px solid #3a3a3e;
+    }
+
+    #cards-all-container {
+        background: transparent;
+    }
+    /* 
+    .big-card-container {
+        background: #1e1e1e;
+        box-shadow: none;
+        border: 1px solid #7c7c7c !important;
+    } */
+
+    .recharts-legend-wrapper {
+        background: #1e1e1e !important;
+    }
+
+    .recharts-default-tooltip {
+        background: #2c2c2e !important;
+    }
+
+    .recharts-tooltip-cursor {
+        filter: invert(1);
+    }
+}
