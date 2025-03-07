@@ -1,4 +1,5 @@
 import React from 'react';
+import logo from '../static/A_trs_transparent_dark.png';
 
 function Home() {
     return (
@@ -8,11 +9,11 @@ function Home() {
                     <h4>
                         React Demo &#8250; <span>Home Page</span>
                     </h4>
-                    <h2 id="page-title">homepage</h2>
+                    <h2 id="page-title">Alert System UI</h2>
                 </div>
             </div>
             <div className="details-container">
-                <p>React demo homepage placeholder</p>
+                <p>Welcome to my (unfinished) React demo</p>
                 <div className="list-container">
                     <span>Pages currently deployed:</span>
                     <ul>

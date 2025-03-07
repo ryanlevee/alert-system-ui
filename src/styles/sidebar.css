@@ -8,6 +8,17 @@
     user-select: none;
 }
 
+.title-container {
+    position: relative;
+}
+
+#logo {
+    width: 75px;
+    position: absolute;
+    left: -75px;
+    top: -20px;
+}
+
 .app-container .Navbar-container a {
     color: #333;
 }

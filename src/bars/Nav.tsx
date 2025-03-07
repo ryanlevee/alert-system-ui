@@ -89,7 +89,7 @@ const Navbar: React.FC<CollapsibleNavbarProps> = ({
             </CollapseToggleButton>
 
             <NavbarNav $collapsed={isCollapsed}>
-                {navItems.map(item => (
+            {navItems.map(item => (
                     <NavbarItem
                         key={item.key}
                         className={item.key}

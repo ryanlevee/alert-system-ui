@@ -11,6 +11,7 @@ import {
 } from 'react-icons/fa';
 import { PiMoonStarsFill } from 'react-icons/pi';
 import styled from 'styled-components';
+import logo from '../static/A_trs_transparent_dark.png';
 
 interface CollapsibleSidebarProps {
     children?: React.ReactNode;
@@ -129,6 +130,10 @@ const Sidebar: React.FC<CollapsibleSidebarProps> = ({
             $collapsed={isCollapsed}
             className={'Sidebar-container'}
         >
+            <div className="title-container">
+                <img id="logo" src={logo} alt="logo" />
+            </div>
+
             <SidebarNav className="sidebar-nav" $collapsed={isCollapsed}>
                 <CollapseToggleButton
                     onClick={toggleCollapse}
