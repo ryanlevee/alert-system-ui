@@ -44,7 +44,7 @@ const GraphContainer = styled.div`
     width: 102%;
     // height: 100%;
     height: 600px;
-    padding: 0 0 0 2%;
+    // padding: 0 0 0 2%;
     margin: 0;
 `;
 
