@@ -13,7 +13,7 @@ function Home() {
                 </div>
             </div>
             <div className="details-container">
-                <p>Welcome to my (unfinished) React demo</p>
+                <p>Welcome to my (unfinished) React demo.</p>
                 <div className="list-container">
                     <span>Pages currently deployed:</span>
                     <ul>
