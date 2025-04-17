@@ -1,3 +1,14 @@
+html:has(div.night-true) {
+    ::-webkit-scrollbar-track {
+        background: #1e1e1e;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: rgb(85, 85, 85);
+        border-radius: 10px;
+    }
+}
+
 body:has(div.night-true) {
     background: #3a3a3e;
 }
@@ -118,6 +129,7 @@ body:has(div.night-true) {
     #cards-all-container {
         background: transparent;
     }
+
     /* 
     .big-card-container {
         background: #1e1e1e;

@@ -185,6 +185,16 @@ const Sidebar: React.FC<CollapsibleSidebarProps> = ({
                     />
                 ))} */}
             </SidebarNav>
+            <div
+                style={{
+                    position: 'fixed',
+                    bottom: '2px',
+                    left: '4px',
+                    fontSize: '12px',
+                }}
+            >
+                <span>demo site by Ryan Levee</span>
+            </div>
         </SidebarContainer>
     );
 };

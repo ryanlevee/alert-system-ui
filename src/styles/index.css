@@ -1,5 +1,27 @@
 html {
     scrollbar-gutter: stable;
+    scrollbar-color: white;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: white;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgb(201, 201, 201);
+    border-radius: 10px;
+}
+
+div:hover::-webkit-scrollbar-thumb {
+    background: gray;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: darkgray !important;
 }
 
 body {
