@@ -2,7 +2,8 @@ archive
 *_test_*
 .eslintrc.json
 .prettierrc
-
+*_BU*.tsx
+*_BU*.css
 
 # Logs
 logs

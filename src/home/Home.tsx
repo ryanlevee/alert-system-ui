@@ -102,18 +102,16 @@ function Home() {
                 </div>
             </div>
             <div className="details-container home">
-                <div>
-                    <p>Welcome to my (unfinished) React demo.</p>
-                    <div className="list-container">
-                        <span>Pages currently deployed:</span>
-                        <ul>
-                            <li>Map View</li>
-                            <li>Event Tracker</li>
-                            <li>Data Dashboard</li>
-                        </ul>
-                    </div>
-                </div>
+                <p>Welcome to my (unfinished) React demo.</p>
+                <div id="details-info-container">Pages currently deployed:</div>
             </div>
+            {/* <div className="info-container home">
+                <ul>
+                    <li>Map View</li>
+                    <li>Event Tracker</li>
+                    <li>Data Dashboard</li>
+                </ul>
+            </div> */}
             <CardComponent />
         </div>
     );

@@ -1,4 +1,4 @@
-import React, { JSX, useState } from 'react';
+import React, { JSX, useEffect, useState } from 'react';
 import About from './about/About';
 import DataComponent from './data/Data';
 import Events from './events/Events';
@@ -11,6 +11,7 @@ function App(): JSX.Element {
     const [currentPage, setCurrentPage] = useState('home');
     const [isNight, setIsNight] = useState<boolean>(false);
     const [isAnimated, setIsAnimated] = useState<boolean>(true);
+    const [isCollapsedLeft, setIsCollapsedLeft] = useState<boolean>(false);
 
     return (
         <div
@@ -20,6 +21,8 @@ function App(): JSX.Element {
                 onPageChange={setCurrentPage}
                 currentPage={currentPage}
                 isNight={isNight}
+                setIsCollapsedLeft={setIsCollapsedLeft}
+                isCollapsedLeft={isCollapsedLeft}
             ></Navbar>
 
             {(() => {
@@ -43,6 +46,8 @@ function App(): JSX.Element {
                 isNight={isNight}
                 onAnimationChange={setIsAnimated}
                 isAnimated={isAnimated}
+                isCollapsedLeft={isCollapsedLeft}
+                setIsCollapsedLeft={setIsCollapsedLeft}
                 currentPage={currentPage}
             ></Sidebar>
         </div>

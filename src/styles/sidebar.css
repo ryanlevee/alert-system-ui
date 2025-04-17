@@ -91,8 +91,8 @@ input:not(:checked) + .sidebar-icon > .sidebar-check {
     background-color: #ccc;
     -webkit-transition: 0.4s;
     transition: 0.4s;
-    width: 30px;
-    height: 16px;
+    width: 32px;
+    height: 17px;
 }
 
 .slider:before {
@@ -100,11 +100,12 @@ input:not(:checked) + .sidebar-icon > .sidebar-check {
     content: '';
     height: 12px;
     width: 12px;
-    left: 2px;
-    bottom: 2px;
+    left: 3.5px;
+    bottom: 2.5px;
     background-color: white;
     -webkit-transition: 0.4s;
     transition: 0.4s;
+    border-radius: 50%;
 }
 
 input.sidebar-checkbox:checked ~ .sidebar-link .slider {
@@ -119,8 +120,4 @@ input.sidebar-checkbox:checked ~ .sidebar-link .slider:before {
 
 .slider.round {
     border-radius: 34px;
-}
-
-.slider.round:before {
-    border-radius: 50%;
 }

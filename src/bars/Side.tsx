@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import {
     FaCalendarAlt,
     FaChevronLeft,
@@ -9,6 +9,7 @@ import {
     FaStopwatch,
     FaCheckCircle,
 } from 'react-icons/fa';
+import { FaArrowsLeftRightToLine } from 'react-icons/fa6';
 import { PiMoonStarsFill } from 'react-icons/pi';
 import styled from 'styled-components';
 import logo from '../static/A_trs_transparent_dark.png';
@@ -19,17 +20,23 @@ interface CollapsibleSidebarProps {
     isNight: boolean;
     onAnimationChange: (animation: boolean) => void;
     isAnimated: boolean;
+    isCollapsedLeft: boolean;
+    setIsCollapsedLeft: (collapse: boolean) => void;
     currentPage: string;
 }
 
 interface SidebarItemProps {
-    item: { key: string; label: string; icon: React.ReactNode };
+    item: { key: string; label: string; icon: React.ReactNode; type: string };
     $collapsed: boolean;
     className?: string;
     onThemeChange: (theme: boolean) => void;
     isNight: boolean;
     onAnimationChange: (animation: boolean) => void;
     isAnimated: boolean;
+    isCollapsed: boolean;
+    isCollapsedLeft: boolean;
+    setIsCollapsedLeft: (collapse: boolean) => void;
+    toggleCollapseSides: () => void;
 }
 
 const SidebarItem: React.FC<SidebarItemProps> = ({
@@ -40,11 +47,32 @@ const SidebarItem: React.FC<SidebarItemProps> = ({
     isNight,
     onAnimationChange,
     isAnimated,
+    isCollapsed,
+    isCollapsedLeft,
+    toggleCollapseSides,
 }) => {
+    const setCollapses = () => {
+        if (item.key === 'collapseSides') {
+            if (!isCollapsedLeft || !isCollapsed) {
+                return false;
+            } else if (isCollapsedLeft && isCollapsed) {
+                return true;
+            }
+        }
+    };
+
     const handleClick = useCallback(() => {
         if (item.key == 'night') onThemeChange(!isNight);
         if (item.key == 'animation') onAnimationChange(!isAnimated);
-    }, [onThemeChange, isNight, onAnimationChange, isAnimated]);
+        if (item.key == 'collapseSides') toggleCollapseSides();
+    }, [
+        onThemeChange,
+        isNight,
+        onAnimationChange,
+        isAnimated,
+        isCollapsed,
+        isCollapsedLeft,
+    ]);
 
     return (
         <StyledSidebarItem
@@ -67,6 +95,7 @@ const SidebarItem: React.FC<SidebarItemProps> = ({
                     type="checkbox"
                     className={`sidebar-checkbox ${item.key}`}
                     defaultChecked={item.key == 'animation' ? true : false}
+                    checked={setCollapses()}
                 />
                 <div className="sidebar-icon">
                     {$collapsed && (
@@ -92,6 +121,8 @@ const Sidebar: React.FC<CollapsibleSidebarProps> = ({
     isNight,
     onAnimationChange,
     isAnimated,
+    isCollapsedLeft,
+    setIsCollapsedLeft,
     currentPage,
 }) => {
     const siteSettings = [
@@ -99,17 +130,20 @@ const Sidebar: React.FC<CollapsibleSidebarProps> = ({
             key: 'night',
             label: 'Night Mode',
             icon: <PiMoonStarsFill />,
+            type: 'slider',
         },
         {
             key: 'animation',
             label: 'Animations',
             icon: <FaStopwatch />,
+            type: 'slider',
         },
-        // {
-        //     key: 'virtual',
-        //     label: 'Virtualize',
-        //     icon: <FaRegWindowMaximize />,
-        // },
+        {
+            key: 'collapseSides',
+            label: 'Collapse Sides',
+            icon: <FaArrowsLeftRightToLine />,
+            type: 'button',
+        },
     ];
 
     const pageSettings = [
@@ -124,6 +158,16 @@ const Sidebar: React.FC<CollapsibleSidebarProps> = ({
     const toggleCollapse = useCallback(() => {
         setIsCollapsed(!isCollapsed);
     }, [isCollapsed]);
+
+    const toggleCollapseSides = useCallback(() => {
+        if (!isCollapsedLeft || !isCollapsed) {
+            setIsCollapsed(true);
+            setIsCollapsedLeft(true);
+        } else {
+            setIsCollapsed(false);
+            setIsCollapsedLeft(false);
+        }
+    }, [isCollapsed, isCollapsedLeft]);
 
     return (
         <SidebarContainer
@@ -161,6 +205,10 @@ const Sidebar: React.FC<CollapsibleSidebarProps> = ({
                         isNight={isNight}
                         onAnimationChange={onAnimationChange}
                         isAnimated={isAnimated}
+                        toggleCollapseSides={toggleCollapseSides}
+                        isCollapsed={isCollapsed}
+                        setIsCollapsedLeft={setIsCollapsedLeft}
+                        isCollapsedLeft={isCollapsedLeft}
                     />
                 ))}
                 <h2 className="sidebar-header" id="page-settings-header">
