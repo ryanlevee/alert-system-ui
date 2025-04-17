@@ -74,6 +74,14 @@ body:has(div.night-true) {
         transition: none !important;
     }
 
+    /* Home Page */
+    .card-container.label {
+        color: #dadadf;
+        border: none;
+        box-shadow: none;
+        background: #1e1e1ee3;
+    }
+
     /* Events Tracker */
     .event-table {
         border-radius: 0;
@@ -101,7 +109,7 @@ body:has(div.night-true) {
 
     /* Data Dashboard */
     .data-dashboard-container {
-        box-shadow: 0px 0px 5px darkgray;
+        box-shadow: .5px .5px 3px darkgray;
     }
 
     .tabs div {

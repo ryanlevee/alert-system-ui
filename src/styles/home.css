@@ -8,7 +8,7 @@
 }
 
 #details-info-container {
-    transform: translateY(-2vh);
+    transform: translateY(-3vh);
 }
 
 .cards-container.home {
@@ -51,7 +51,8 @@
     color: rgba(0, 0, 0, 0.644);
     font-weight: 500;
     position: absolute;
-    width: 97%;
+    width: 98%;
+    transform: translateX(-.25vw) translateY(-0.25vh);
     background: rgba(180, 180, 180, 0.81);
     text-align: center;
 }
