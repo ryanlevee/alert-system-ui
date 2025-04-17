@@ -21,7 +21,7 @@
 
 .card-container.home {
     position: absolute;
-    bottom: 0;
+    bottom: 0.5vh;
     background: rgb(181, 181, 181);
     padding: 1vh;
     cursor: pointer;
@@ -35,14 +35,15 @@
     outline: none;
 
     &:hover {
-        bottom: 0.5vh;
+        bottom: 0.9vh;
         z-index: 5 !important;
         opacity: 1 !important;
     };
 }
 
-.card-container.home:focus-visible {
-    box-shadow: 0 0 0 2px dodgerblue;
+.card-container.home:focus {
+    box-shadow: 1px 1px 3px 0 rgb(139, 139, 139);
+    /* bottom: 0.75vh; */
 }
 
 .card-container.label {
