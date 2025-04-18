@@ -211,17 +211,17 @@ const Sidebar: React.FC<CollapsibleSidebarProps> = ({
                         isCollapsedLeft={isCollapsedLeft}
                     />
                 ))}
-                <h2 className="sidebar-header" id="page-settings-header">
+                {/* <h2 className="sidebar-header" id="page-settings-header">
                     {!isCollapsed && <span>Page Highlights</span>}
-                </h2>
-                <PageHighlights $collapsed={isCollapsed}>
+                </h2> */}
+                {/* <PageHighlights $collapsed={isCollapsed}>
                     <ul>
                         <li>{currentPage} page info...</li>
                         <li>will go here...</li>
                         <li>and here...</li>
                         <li>and here...</li>
                     </ul>
-                </PageHighlights>
+                </PageHighlights> */}
                 {/* {pageSettings.map(item => (
                     <SidebarItem
                         key={item.key}

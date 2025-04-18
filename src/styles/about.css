@@ -1,0 +1,30 @@
+.details-div-container {
+    height: 15vh;
+}
+
+.details-div-container > div:first-child {
+    margin-bottom: 1vh;
+}
+
+.about-a {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1vh;
+    width: 10%;
+
+    &:hover {
+        background: #d5d5da;
+    }
+}
+
+.about-logo-container {
+    width: 2vw;
+    margin-right: 0.5vw;
+    display: flex;
+    align-items: center;
+    height: 3vh;
+}
+
+.about-logo {
+    width: 1.25vw;
+}

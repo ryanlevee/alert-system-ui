@@ -3,6 +3,7 @@ import { createRoot } from "react-dom/client";
 import App from "./App";
 import "./styles/home.css";
 import "./styles/app.css";
+import "./styles/about.css";
 import "./styles/data.css";
 import "./styles/events.css";
 import "./styles/index.css";

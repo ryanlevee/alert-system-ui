@@ -102,7 +102,16 @@ function Home() {
                 </div>
             </div>
             <div className="details-container home">
-                <p>Welcome to my (unfinished) React demo.</p>
+                <div className="details-p-container">
+                    <p>Welcome to my (unfinished) React demo.</p>
+                    <p>
+                        This is the frontend for my "Real-Time Scan and Alert
+                        System" project:{' '}
+                        <a href="https://github.com/ryanlevee/real-time-scan-and-alert-system">
+                            GitHub repo
+                        </a>
+                    </p>
+                </div>
                 <div id="details-info-container">Pages currently deployed:</div>
             </div>
             {/* <div className="info-container home">
