@@ -213,8 +213,8 @@ const Sidebar: React.FC<CollapsibleSidebarProps> = ({
                 ))}
                 {/* <h2 className="sidebar-header" id="page-settings-header">
                     {!isCollapsed && <span>Page Highlights</span>}
-                </h2> */}
-                {/* <PageHighlights $collapsed={isCollapsed}>
+                </h2> 
+                <PageHighlights $collapsed={isCollapsed}>
                     <ul>
                         <li>{currentPage} page info...</li>
                         <li>will go here...</li>
@@ -319,8 +319,8 @@ const SidebarLink = styled.a`
     cursor: pointer;
 `;
 
-const PageHighlights = styled.div<{ $collapsed: boolean }>`
-    display: ${props => (props.$collapsed ? 'none' : 'initial')};
-    padding: 8px 0 10px 36px;
-    font-size: 14px;
-`;
+// const PageHighlights = styled.div<{ $collapsed: boolean }>`
+//     display: ${props => (props.$collapsed ? 'none' : 'initial')};
+//     padding: 8px 0 10px 36px;
+//     font-size: 14px;
+// `;

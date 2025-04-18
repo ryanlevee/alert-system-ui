@@ -1,20 +1,82 @@
-.details-div-container {
-    height: 15vh;
+.about-container {
+    display: flex;
+    width: 100%;
 }
 
-.details-div-container > div:first-child {
+.about-details-container,
+.about-resume-container,
+.about-projects-container {
+    margin-top: 3vh;
+    margin-right: 2vw;
+}
+
+.about-details-container {
+    width: 30%;
+}
+
+.about-resume-container {
+    position: relative;
+    cursor: pointer;
+    width: 100%;
+}
+
+.about-projects-container {
+    width: 27.5vw;
+}
+
+.resume-img {
+    width: 22.5vw;
+    border: 1px solid rgb(216, 216, 216);
+    border-radius: 5px;
+}
+
+#resume-img-1 {
+    position: absolute;
+    z-index: 1;
+}
+
+#resume-img-2 {
+    position: absolute;
+    transform: translateX(15%) translateY(5%);
+    z-index: 0;
+
+    &:hover {
+        z-index: 2;
+    }
+}
+
+.about-details-header {
+    border-bottom: 3px solid rgb(146, 146, 146);
+    width: max-content;
     margin-bottom: 1vh;
+}
+
+.details-a-container {
+    padding: 0 0.25vw;
 }
 
 .about-a {
     display: flex;
     align-items: center;
     margin-bottom: 1vh;
-    width: 10%;
 
     &:hover {
         background: #d5d5da;
     }
+
+    & > span {
+        width: fit-content;
+    }
+
+    &.projects {
+        justify-content: space-between;
+    }
+}
+
+.about-div.projects {
+    display: flex;
+
+    padding: 0.5vh 0;
 }
 
 .about-logo-container {
@@ -27,4 +89,17 @@
 
 .about-logo {
     width: 1.25vw;
+}
+
+#radar-logo {
+    width: 2vw;
+}
+
+#play-logo-container,
+#play-logo {
+    width: 9vw;
+}
+
+.host-name {
+    font-size: 0.8rem;
 }

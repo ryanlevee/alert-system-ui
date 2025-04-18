@@ -151,7 +151,7 @@ function DataComponent({
                     <h4>
                         React Demo &#8250; <span>Data Dashboard</span>
                     </h4>
-                    <h2 id="page-title">data</h2>
+                    <h2 className="page-title">data</h2>
                 </div>
                 <div className="select-container">
                     <div id="filter-container-outer">

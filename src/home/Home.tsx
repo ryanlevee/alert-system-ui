@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import cardMap from '../static/homeCards/map_view-cropped.png';
 import cardEvent from '../static/homeCards/event_tracker_cropped.png';
 import cardData from '../static/homeCards/data_dashboard_cropped.png';
+import cardAbout from '../static/homeCards/about_page-cropped.png';
+import cardHome from '../static/homeCards/home_page-cropped.png';
 
 interface CardInfo {
     id: string;
@@ -14,6 +16,8 @@ const cardDataArray: CardInfo[] = [
     { id: 'data', src: cardData, alt: 'card-data', label: 'data dashboard' },
     { id: 'map', src: cardMap, alt: 'card-map', label: 'map view' },
     { id: 'event', src: cardEvent, alt: 'card-event', label: 'event tracker' },
+    { id: 'about', src: cardAbout, alt: 'card-about', label: 'about page' },
+    { id: 'home', src: cardHome, alt: 'card-home', label: 'home page' },
 ];
 
 const CardComponent: React.FC = () => {
@@ -38,8 +42,12 @@ const CardComponent: React.FC = () => {
         if (index === selectedIndex) {
             return 'card-center';
         } else if (index === (selectedIndex - 1 + numCards) % numCards) {
+            return 'card-center-left';
+        } else if (index === (selectedIndex - 2 + numCards) % numCards) {
             return 'card-left';
         } else if (index === (selectedIndex + 1) % numCards) {
+            return 'card-center-right';
+        } else if (index === (selectedIndex + 2) % numCards) {
             return 'card-right';
         }
         return '';
@@ -98,21 +106,22 @@ function Home() {
                     <h4>
                         React Demo &#8250; <span>Home Page</span>
                     </h4>
-                    <h2 id="page-title">Alert System UI</h2>
+                    <h2 className="page-title">Alert System UI</h2>
                 </div>
             </div>
             <div className="details-container home">
                 <div className="details-p-container">
-                    <p>Welcome to my (unfinished) React demo.</p>
+                    <p>Welcome to my (in progress) React demo.</p>
                     <p>
                         This is the frontend for my "Real-Time Scan and Alert
-                        System" project:{' '}
+                        System" project{' '}
                         <a href="https://github.com/ryanlevee/real-time-scan-and-alert-system">
-                            GitHub repo
+                            (GitHub repo)
                         </a>
+                        .
                     </p>
                 </div>
-                <div id="details-info-container">Pages currently deployed:</div>
+                <div id="details-info-container">Pages currently deployed</div>
             </div>
             {/* <div className="info-container home">
                 <ul>

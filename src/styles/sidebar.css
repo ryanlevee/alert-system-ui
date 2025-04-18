@@ -32,6 +32,8 @@
 }
 
 .sidebar-header {
+    min-height: 40px;
+    padding-top: 10px;
     margin: 0 0 0 15px;
     font-size: 18px;
     text-transform: lowercase;

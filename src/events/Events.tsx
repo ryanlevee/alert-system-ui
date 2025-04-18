@@ -97,7 +97,7 @@ const DataComponent: React.FC = () => {
                     <h4>
                         React Demo &#8250; <span>Event Tracker</span>
                     </h4>
-                    <h2 id="page-title">events</h2>
+                    <h2 className="page-title">events</h2>
                 </div>
 
                 <div className="select-container">

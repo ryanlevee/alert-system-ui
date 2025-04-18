@@ -82,6 +82,13 @@ body:has(div.night-true) {
         background: #1e1e1ee3;
     }
 
+    /* About Page */
+    .about-a {
+        &:hover {
+            background: #242424;
+        }
+    }
+    
     /* Events Tracker */
     .event-table {
         border-radius: 0;
@@ -137,13 +144,6 @@ body:has(div.night-true) {
     #cards-all-container {
         background: transparent;
     }
-
-    /* 
-    .big-card-container {
-        background: #1e1e1e;
-        box-shadow: none;
-        border: 1px solid #7c7c7c !important;
-    } */
 
     .recharts-legend-wrapper {
         background: #1e1e1e !important;

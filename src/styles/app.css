@@ -1,5 +1,12 @@
+.page-title {
+    transform: translateX(-1vw);
+    border-bottom: 3px solid rgb(197, 130, 130);
+    padding-left: 1vw !important;
+    width: max-content;
+}
+
 .data-container.home,
-.about-container {
+.data-container.about {
     padding: 20px !important;
 }
 

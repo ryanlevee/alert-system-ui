@@ -345,7 +345,7 @@ const MapComponent: React.FC = () => {
                     <h4>
                         React Demo &#8250; <span>Map View</span>
                     </h4>
-                    <h2>map</h2>
+                    <h2 className="page-title">map</h2>
                 </div>
                 <div className="select-container">
                     <div id="filter-container-outer">
