@@ -3,17 +3,17 @@ import {
     Bar,
     BarChart,
     Cell,
+    Legend,
     ResponsiveContainer,
     Tooltip,
     XAxis,
     YAxis,
-    Legend,
 } from 'recharts';
 import styled from 'styled-components';
 import {
+    categories,
     EventCategoryName,
     eventData,
-    categories,
 } from '../interfaces/interfaces';
 
 const BigCardContainer = styled.div`

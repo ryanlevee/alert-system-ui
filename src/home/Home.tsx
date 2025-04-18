@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import cardMap from '../static/homeCards/map_view-cropped.png';
-import cardEvent from '../static/homeCards/event_tracker_cropped.png';
-import cardData from '../static/homeCards/data_dashboard_cropped.png';
 import cardAbout from '../static/homeCards/about_page-cropped.png';
+import cardData from '../static/homeCards/data_dashboard_cropped.png';
+import cardEvent from '../static/homeCards/event_tracker_cropped.png';
 import cardHome from '../static/homeCards/home_page-cropped.png';
+import cardMap from '../static/homeCards/map_view-cropped.png';
 
 interface CardInfo {
     id: string;

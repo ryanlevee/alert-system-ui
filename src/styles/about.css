@@ -58,7 +58,8 @@
 .about-a {
     display: flex;
     align-items: center;
-    margin-bottom: 1vh;
+    padding: 0.5vh 0;
+    /* margin-bottom: 1vh; */
 
     &:hover {
         background: #d5d5da;
@@ -75,7 +76,6 @@
 
 .about-div.projects {
     display: flex;
-
     padding: 0.5vh 0;
 }
 

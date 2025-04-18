@@ -1,11 +1,11 @@
-import React, { JSX, useEffect, useState } from 'react';
+import React, { JSX, useState } from 'react';
 import About from './about/About';
+import Navbar from './bars/Nav';
+import Sidebar from './bars/Side';
 import DataComponent from './data/Data';
 import Events from './events/Events';
 import Home from './home/Home';
 import MapComponent from './map/Map';
-import Navbar from './bars/Nav';
-import Sidebar from './bars/Side';
 
 function App(): JSX.Element {
     const [currentPage, setCurrentPage] = useState('home');

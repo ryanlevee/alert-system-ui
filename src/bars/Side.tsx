@@ -1,13 +1,13 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import {
     FaCalendarAlt,
+    FaCheckCircle,
     FaChevronLeft,
     FaChevronRight,
     FaDatabase,
     FaInfoCircle,
     FaRegSun as FaSettings,
     FaStopwatch,
-    FaCheckCircle,
 } from 'react-icons/fa';
 import { FaArrowsLeftRightToLine } from 'react-icons/fa6';
 import { PiMoonStarsFill } from 'react-icons/pi';

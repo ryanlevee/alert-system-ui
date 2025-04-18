@@ -1,9 +1,9 @@
-import RenderGraph from './Graph';
 import React, { useCallback, useEffect, useState } from 'react';
 import Select, { ActionMeta, SingleValue } from 'react-select';
 import styled from 'styled-components';
 import { EventCategoryName, eventData } from '../interfaces/interfaces';
 import RenderCards from './Cards';
+import RenderGraph from './Graph';
 
 const DataContainer = styled.div`
     padding: 20px;
