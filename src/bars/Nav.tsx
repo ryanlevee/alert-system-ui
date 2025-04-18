@@ -15,11 +15,8 @@ interface CollapsibleNavbarProps {
     onPageChange: (pageName: string) => void;
     currentPage: string;
     isNight: boolean;
-    // isCollapsedSides: boolean;
-    // setIsCollapsedSides: (collapse: boolean) => void;
     isCollapsedLeft: boolean;
     setIsCollapsedLeft: (collapse: boolean) => void;
-    // setIsCollapsedRight: (collapse: boolean) => void;
 }
 
 interface NavbarItemProps {
@@ -29,7 +26,6 @@ interface NavbarItemProps {
     onPageChange: (pageName: string) => void;
     currentPage: string;
     isNight: boolean;
-    // isCollapsedSides: boolean;
 }
 
 const NavbarItem: React.FC<NavbarItemProps> = ({
@@ -39,7 +35,6 @@ const NavbarItem: React.FC<NavbarItemProps> = ({
     onPageChange,
     currentPage,
     isNight,
-    // isCollapsedSides,
 }) => {
     const handleClick = useCallback(() => {
         onPageChange(item.key);
@@ -65,11 +60,8 @@ const Navbar: React.FC<CollapsibleNavbarProps> = ({
     onPageChange,
     currentPage,
     isNight,
-    // isCollapsedSides,
-    // setIsCollapsedSides,
     setIsCollapsedLeft,
     isCollapsedLeft,
-    // setIsCollapsedRight
 }) => {
     const navItems = [
         { key: 'home', label: 'Home', icon: <FaHome /> },
@@ -81,19 +73,12 @@ const Navbar: React.FC<CollapsibleNavbarProps> = ({
     const [isCollapsed, setIsCollapsed] = useState<boolean>(false);
 
     const toggleCollapse = useCallback(() => {
-        // if (isCollapsed) {
-        //     setIsCollapsedSides(false);
-        //     // setIsCollapsedRight(true)
-        // }
         setIsCollapsed(!isCollapsed);
         setIsCollapsedLeft(!isCollapsedLeft);
     }, [isCollapsed]);
 
     useEffect(() => {
-        // setIsCollapsed(isCollapsedSides);
-        // setIsCollapsedLeft(isCollapsedSides);
         setIsCollapsed(isCollapsedLeft);
-        // setIsCollapsedLeft(!isCollapsedLeft);
     }, [isCollapsedLeft]);
 
     return (
@@ -121,7 +106,6 @@ const Navbar: React.FC<CollapsibleNavbarProps> = ({
                         onPageChange={onPageChange}
                         currentPage={currentPage}
                         isNight={isNight}
-                        // isCollapsedSides={isCollapsedSides}
                     />
                 ))}
                 {}
