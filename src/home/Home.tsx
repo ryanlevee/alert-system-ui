@@ -121,7 +121,7 @@ function Home() {
                         .
                     </p>
                 </div>
-                <div id="details-info-container">Pages currently deployed</div>
+                <div id="details-info-container">Pages currently deployed:</div>
             </div>
             {/* <div className="info-container home">
                 <ul>
