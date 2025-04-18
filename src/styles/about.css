@@ -51,15 +51,10 @@
     margin-bottom: 1vh;
 }
 
-.details-a-container {
-    padding: 0 0.25vw;
-}
-
 .about-a {
     display: flex;
     align-items: center;
-    padding: 0.5vh 0;
-    /* margin-bottom: 1vh; */
+    padding: 0.5vh 0.25vw;
 
     &:hover {
         background: #d5d5da;
