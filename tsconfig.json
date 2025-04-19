@@ -2,6 +2,14 @@
     "compilerOptions": {
         "jsx": "react",
         "resolveJsonModule": true,
+        "target": "esnext", // <-- Recommended
+        "module": "esnext", // <-- Change this line or add it
+        "moduleResolution": "bundler", // Often used with Vite, keep if present
+        "isolatedModules": true,
+        "noEmit": true, // Usually true for Vite projects
     },
-    "extends": "./node_modules/@tsconfig/recommended/tsconfig.json"
+    "extends": "./node_modules/@tsconfig/recommended/tsconfig.json",
+    "include": [
+        "src"
+    ]
 }

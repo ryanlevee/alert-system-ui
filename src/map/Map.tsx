@@ -30,7 +30,7 @@ import {
     eventData,
 } from '../interfaces/interfaces';
 
-const stadiaApiKey = process.env.REACT_APP_STADIA_API_KEY
+const stadiaApiKey = import.meta.env.VITE_STADIA_API_KEY;
 const stadiaTileUrl = `https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png?api_key=${stadiaApiKey}`;
 
 interface LeafletIcon extends L.Icon {}
