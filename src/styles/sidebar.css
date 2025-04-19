@@ -1,10 +1,6 @@
-.Navbar-container {
-    background-color: #f0f2f5;
-    user-select: none;
-}
-
+.Navbar-container,
 .Sidebar-container {
-    background-color: #f0f2f5;
+    background: #f0f2f5;
     user-select: none;
 }
 
@@ -90,7 +86,7 @@ input:not(:checked) + .sidebar-icon > .sidebar-check {
 .slider {
     position: absolute;
     right: 5px;
-    background-color: #ccc;
+    background: #ccc;
     -webkit-transition: 0.4s;
     transition: 0.4s;
     width: 32px;
@@ -104,14 +100,14 @@ input:not(:checked) + .sidebar-icon > .sidebar-check {
     width: 12px;
     left: 3.5px;
     bottom: 2.5px;
-    background-color: white;
+    background: white;
     -webkit-transition: 0.4s;
     transition: 0.4s;
     border-radius: 50%;
 }
 
 input.sidebar-checkbox:checked ~ .sidebar-link .slider {
-    background-color: #4f6b99;
+    background: #4f6b99;
 }
 
 input.sidebar-checkbox:checked ~ .sidebar-link .slider:before {

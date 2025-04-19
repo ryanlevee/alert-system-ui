@@ -272,7 +272,7 @@ const CollapseToggleButton = styled.button<{ $collapsed: boolean }>`
 
     transition:
         right 0.25s ease-out,
-        background-color 0.25s ease;
+        background 0.25s ease;
     z-index: 10;
 
     &:hover {
@@ -307,7 +307,7 @@ const SidebarLink = styled.a`
     position: relative;
     text-decoration: none;
     color: #333;
-    transition: background-color 0.25s ease;
+    transition: background 0.25s ease;
     display: flex;
     align-items: center;
     user-select: none;

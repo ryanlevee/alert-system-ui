@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import cardAbout from '../static/homeCards/about_page-cropped.png';
-import cardData from '../static/homeCards/data_dashboard_cropped.png';
-import cardEvent from '../static/homeCards/event_tracker_cropped.png';
-import cardHome from '../static/homeCards/home_page-cropped.png';
-import cardMap from '../static/homeCards/map_view-cropped.png';
+import cardAbout from '../static/homeCards/about_page.png';
+import cardData from '../static/homeCards/data_dashboard.png';
+import cardEvent from '../static/homeCards/event_tracker.png';
+import cardHome from '../static/homeCards/home_page.png';
+import cardMap from '../static/homeCards/map_view.png';
 
 interface CardInfo {
     id: string;
@@ -13,11 +13,36 @@ interface CardInfo {
 }
 
 const cardDataArray: CardInfo[] = [
-    { id: 'data', src: cardData, alt: 'card-data', label: 'data dashboard' },
-    { id: 'map', src: cardMap, alt: 'card-map', label: 'map view' },
-    { id: 'event', src: cardEvent, alt: 'card-event', label: 'event tracker' },
-    { id: 'about', src: cardAbout, alt: 'card-about', label: 'about page' },
-    { id: 'home', src: cardHome, alt: 'card-home', label: 'home page' },
+    {
+        id: 'data',
+        src: cardData,
+        alt: 'card-data',
+        label: 'data dashboard',
+    },
+    {
+        id: 'map',
+        src: cardMap,
+        alt: 'card-map',
+        label: 'map view',
+    },
+    {
+        id: 'event',
+        src: cardEvent,
+        alt: 'card-event',
+        label: 'event tracker',
+    },
+    {
+        id: 'about',
+        src: cardAbout,
+        alt: 'card-about',
+        label: 'about page',
+    },
+    {
+        id: 'home',
+        src: cardHome,
+        alt: 'card-home',
+        label: 'home page',
+    },
 ];
 
 const CardComponent: React.FC = () => {
@@ -62,7 +87,7 @@ const CardComponent: React.FC = () => {
                 onClick={handlePreviousClick}
                 aria-label="Previous Card"
             >
-                &#9664; {/* Left-pointing triangle */}
+                &#9664;
             </button>
 
             {cardDataArray.map((card, index) => (
@@ -78,7 +103,7 @@ const CardComponent: React.FC = () => {
                     <div className="card-container label">{card.label}</div>
                     <img
                         id={`card-${card.id}`}
-                        className="home-card"
+                        className="card-img"
                         src={card.src}
                         alt={card.alt}
                     />
@@ -92,7 +117,7 @@ const CardComponent: React.FC = () => {
                 onClick={handleNextClick}
                 aria-label="Next Card"
             >
-                &#9654; {/* Right-pointing triangle */}
+                &#9654;
             </button>
         </div>
     );
@@ -108,28 +133,39 @@ function Home() {
                     </h4>
                     <h2 className="page-title">Alert System UI</h2>
                 </div>
-            </div>
-            <div className="details-container home">
                 <div className="details-p-container">
-                    <p>Welcome to my (in progress) React demo.</p>
-                    <p>
-                        This is the frontend for my "Real-Time Scan and Alert
-                        System" project{' '}
-                        <a href="https://github.com/ryanlevee/real-time-scan-and-alert-system">
-                            (GitHub repo)
-                        </a>
-                        .
-                    </p>
+                    <p id="welcome-p">Welcome.</p>
+
+                    <div id="summary-container">
+                        <div id="indent-line"></div>
+                        <div>
+                            <p>
+                                This is the frontend for my "Real-Time Scan and
+                                Alert System" project (
+                                <a href="https://github.com/ryanlevee/real-time-scan-and-alert-system">
+                                    GitHub repo
+                                </a>
+                                ).
+                            </p>
+                            <p>
+                                Built with React.js and TypeScript, it
+                                demonstrates various UI components and
+                                techniques for visualizing and managing data,
+                                themed around a conceptual alert monitoring
+                                system. The application provides dynamic ways to
+                                view and analyze simulated alert data. Navigate
+                                using the sidebar to visualize events
+                                geographically on the Map View, track detailed
+                                alert information in the Event Tracker, or gain
+                                insights from aggregated statistics on the Data
+                                Dashboard. Visit the About page to learn more
+                                about me.
+                            </p>
+                        </div>
+                    </div>
                 </div>
-                <div id="details-info-container">Pages currently deployed:</div>
             </div>
-            {/* <div className="info-container home">
-                <ul>
-                    <li>Map View</li>
-                    <li>Event Tracker</li>
-                    <li>Data Dashboard</li>
-                </ul>
-            </div> */}
+            <p id="pages-deployed-p">Pages currently deployed:</p>
             <CardComponent />
         </div>
     );

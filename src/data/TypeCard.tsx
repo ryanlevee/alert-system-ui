@@ -13,7 +13,7 @@ import ico from '../common/iconMapping';
 import { SeverityLevel } from './Cards';
 
 const TypeCardStyled = styled.div`
-    background-color: #f6f9ff;
+    background: #f6f9ff;
     border: 1px solid #ccc;
     border-radius: 5px;
     width: 425px;

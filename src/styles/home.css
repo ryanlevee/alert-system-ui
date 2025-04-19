@@ -1,5 +1,14 @@
+.data-container.home {
+    justify-content: space-between;
+}
+
+.top-container.home {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
 .details-container.home {
-    /* height: 100%; */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -7,14 +16,37 @@
     width: 100%;
 }
 
-.details-p-container p {
-    padding-bottom: 1vh;
+.details-p-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: 1100px;
 }
 
-#details-info-container {
-    transform: translateY(calc(4.75vw));
+.details-p-container p {
+    padding-bottom: 1vh;
+    font-size: calc(.5rem + .8vh);
+}
+
+#welcome-p {
+    font-size: 3vw;
+}
+
+#pages-deployed-p {
     border-bottom: 3px solid rgb(146, 146, 146);
     width: fit-content;
+}
+
+#summary-container {
+    display: flex;
+    margin-bottom: 1vh;
+}
+
+#indent-line {
+    background: #c58282;
+    width: 10px;
+    margin-right: 0.5vw;
+    /* border-radius: 5px; */
 }
 
 .cards-container.home {
@@ -22,7 +54,7 @@
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    height: 60%;
+    height: 46vh;
     min-height: 200px;
     width: 100%;
     user-select: none;
@@ -32,81 +64,102 @@
 .card-container.home {
     position: absolute;
     bottom: 0.5vh;
-    background: rgb(181, 181, 181);
-    padding: 1vh;
+
+    border: 1px solid silver;
+    background: #f0f2f5;
+
+    border-radius: 5%;
     cursor: pointer;
+
     transform-origin: bottom center;
     transition:
         transform 0.5s ease-in-out,
         width 0.5s ease-in-out,
+        height 0.5s ease-in-out,
+        bottom 0.25s ease-in-out,
         opacity 0.25s ease-in-out,
-        bottom 0.2s ease-in-out;
-    width: calc(20vw + 2vh);
+        z-index 0.25s ease-in-out;
+
+    width: calc(14vw + 14vh);
+
     outline: none;
+    overflow: hidden;
 
     &:hover {
-        bottom: 0.75vh;
+        bottom: 0.8vh;
         z-index: 5 !important;
         opacity: 1 !important;
     }
 }
 
 .card-container.label {
+    visibility: hidden;
     color: rgba(0, 0, 0, 0.644);
     font-weight: 500;
     position: absolute;
-    width: 98%;
-    transform: translateX(-0.25vw) translateY(-0.25vh);
+    top: 0;
+    left: 0;
+    width: 100%;
     background: rgba(180, 180, 180, 0.875);
     text-align: center;
+    z-index: 1;
+    height: 6.5%;
+    display: flex;
+    align-content: flex-end;
+    padding-bottom: 1%;
 }
 
-.home-card {
+.card-img {
     display: block;
     width: 100%;
-    height: auto;
     pointer-events: none;
+    transform: scale(2.5) translateX(30%) translateY(30%);
 }
 
 .card-container.home.card-left {
     left: 52.5%;
-    transform: translateX(calc(-50% - 11vw - 10vw)) translateY(-1.5vh);
+    transform: translateX(calc(-50% - 11vw - 10vw));
     z-index: 1;
-    opacity: 0.7;
-    width: calc(20vw + 2vh);
+    opacity: 0.85;
+    height: calc(40vh + 4vw);
+    max-height: calc(576.713px - (28.83565px * 2));
 }
 
 .card-container.home.card-center-left {
     left: 50%;
-    transform: translateX(calc(-50% - 5.5vw - 5vw)) translateY(-0.5vh);
+    transform: translateX(calc(-50% - 5.5vw - 5vw));
     z-index: 2;
-    opacity: 0.825;
-    width: calc(20vw + 4vh);
+    opacity: 0.925;
+    height: calc(45vh + 4vw);
+    max-height: calc(576.713px - 28.83565px);
 }
 
 .card-container.home.card-center {
     box-shadow: 1px 1px 3px 0 rgb(139, 139, 139);
     left: 50%;
-    transform: translateX(-50%) translateY(-0.25vh);
-    width: calc(22vw + 2vh);
+    transform: translateX(-50%);
     z-index: 3;
     opacity: 1;
+    height: calc(50vh + 4vw);
+    max-height: 576.713px;
 }
 
 .card-container.home.card-center-right {
     left: 50%;
-    transform: translateX(calc(-50% + 5.5vw + 5vw)) translateY(-0.5vh);
+    transform: translateX(calc(-50% + 5.5vw + 5vw));
     z-index: 2;
-    opacity: 0.825;
-    width: calc(20vw + 4vh);
+    opacity: 0.925;
+    height: calc(45vh + 4vw);
+    max-height: calc(576.713px - 28.83565px);
 }
 
 .card-container.home.card-right {
     left: 48.5%;
-    transform: translateX(calc(-50% + 11vw + 10vw)) translateY(-1.5vh);
+    transform: translateX(calc(-50% + 11vw + 10vw));
     z-index: 1;
-    opacity: 0.7;
-    width: calc(20vw + 2vh);
+    opacity: 0.85;
+    height: calc(40vh + 4vw);
+    max-height: calc(576.713px - (28.83565px * 2));
 }
 
 .carousel-arrow {
@@ -122,7 +175,7 @@
     font-size: 4vw;
     color: rgb(80, 80, 80);
     position: absolute;
-    bottom: 16vh;
+    bottom: 18vh;
     z-index: 10;
     transition: color 0.2s ease;
 }

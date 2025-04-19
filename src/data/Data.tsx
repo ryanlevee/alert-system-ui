@@ -12,7 +12,7 @@ const DataContainer = styled.div`
 const CardsCategoryContainer = styled.div<{
     $selectedTab: string | null;
 }>`
-    // background-color: #faf9fb;
+    // background: #faf9fb;
     // padding: 0 !important;
     // margin: 0 !important;
 
@@ -27,7 +27,7 @@ const CardsCategoryContainer = styled.div<{
 const CardsAllContainer = styled.div<{
     $selectedTab: string | null;
 }>`
-    background-color: #faf9fb;
+    background: #faf9fb;
     // padding: 0 !important;
     // margin: 0 !important;
 

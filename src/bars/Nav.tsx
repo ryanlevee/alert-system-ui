@@ -141,7 +141,7 @@ const CollapseToggleButton = styled.button<{ $collapsed: boolean }>`
 
     transition:
         right 0.3s easeout,
-        background-color 0.3s ease;
+        background 0.3s ease;
     z-index: 10;
 
     &:hover {
@@ -163,11 +163,11 @@ const StyledNavbarItem = styled.li<{ $activePage: boolean; $isNight: boolean }>`
     padding: 10px 15px;
 
     color: ${props => (props.$activePage ? 'darkblue' : '#f0f2f5')};
-    background-color: ${props =>
+    background: ${props =>
         props.$activePage ? (props.$isNight ? '#57575b' : '#d5d5da') : 'none'};
 
     &:hover {
-        background-color: #d5d5da;
+        background: #d5d5da;
     }
 
     &:hover a {
@@ -178,7 +178,7 @@ const StyledNavbarItem = styled.li<{ $activePage: boolean; $isNight: boolean }>`
 const NavbarLink = styled.a<{ label: string }>`
     align-items: center;
     text-decoration: none;
-    transition: background-color 0.2s ease;
+    transition: background 0.2s ease;
     white-space: nowrap;
     overflow: hidden;
     padding-right: 10px;

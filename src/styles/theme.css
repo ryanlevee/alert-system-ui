@@ -35,7 +35,7 @@ body:has(div.night-true) {
     }
 
     .navbar-item:hover {
-        background-color: #57575b !important;
+        background: #57575b !important;
     }
 
     .collapse-toggle-button {
@@ -82,24 +82,28 @@ body:has(div.night-true) {
         background: #1e1e1ee3;
     }
 
+    .carousel-arrow:hover {
+        color: rgb(128, 128, 128);
+    }
+
     /* About Page */
     .about-a {
         &:hover {
             background: #242424;
         }
     }
-    
+
     /* Events Tracker */
     .event-table {
         border-radius: 0;
     }
 
     .event-table thead {
-        background: #2c2c2e;
+        background: #303033;
     }
 
     .event-row {
-        background: #3a3a3e;
+        background: #27272b;
     }
 
     .hidden-container {
@@ -116,12 +120,12 @@ body:has(div.night-true) {
 
     /* Data Dashboard */
     .data-dashboard-container {
-        box-shadow: .5px .5px 3px darkgray;
+        box-shadow: 0.5px 0.5px 3px darkgray;
     }
 
     .tabs div {
         &:hover {
-            background-color: #57575b;
+            background: #57575b;
         }
     }
 
@@ -131,12 +135,12 @@ body:has(div.night-true) {
 
     #cards-category-container,
     .card-container {
-        background-color: #1e1e1e;
+        background: #1e1e1e;
     }
 
     .big-card-container,
     .card-container {
-        background-color: #1e1e1e;
+        background: #1e1e1e;
         box-shadow: 1px 1px 3px gray;
         border: 1px solid #3a3a3e;
     }

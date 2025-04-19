@@ -26,7 +26,7 @@ tspan {
     font-weight: 500;
 
     &:hover {
-        background-color: #d5d5da;
+        background: #d5d5da;
     }
 
     border-top-right-radius: 5px;
@@ -56,19 +56,19 @@ tspan {
 }
 
 .Safety .card-title {
-    background-color: #4f6b99;
+    background: #4f6b99;
 }
 
 .Weather .card-title {
-    background-color: #418671;
+    background: #418671;
 }
 
 .Operations .card-title {
-    background-color: #714c91;
+    background: #714c91;
 }
 
 .Disaster .card-title {
-    background-color: #99544f;
+    background: #99544f;
 }
 
 .card-title-flex {

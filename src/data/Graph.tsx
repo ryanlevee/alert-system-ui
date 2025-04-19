@@ -21,7 +21,7 @@ const BigCardContainer = styled.div`
     border-radius: 5px;
     padding: 20px;
     margin: 20px;
-    // background-color: rgb(239, 245, 255);
+    // background: rgb(239, 245, 255);
     box-shadow: 2px 2px 5px #eee;
     display: flex;
     flex-direction: column;
