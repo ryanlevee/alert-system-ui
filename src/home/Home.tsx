@@ -161,7 +161,7 @@ function Home({ isNight }: { isNight: boolean }): React.ReactNode | null {
                                 ).
                             </p>
                             <p>
-                                Built with React.js and TypeScript, it
+                                Built with React.js and TypeScript, this project
                                 demonstrates various UI components and
                                 techniques for visualizing and managing data,
                                 themed around a conceptual alert monitoring
