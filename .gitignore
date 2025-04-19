@@ -4,6 +4,7 @@ archive
 .prettierrc
 *_BU*.tsx
 *_BU*.css
+*.env
 
 # Logs
 logs

@@ -340,6 +340,9 @@ const MapComponent: React.FC<Props> = props => {
         return null;
     }
 
+    const stadiaApiKey = process.env.REACT_APP_STADIA_API_KEY
+    const stadiaTileUrl = `https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png?api_key=${stadiaApiKey}`;
+
     return (
         <DataContainer className="data-container">
             <div className="top-container">
@@ -403,7 +406,7 @@ const MapComponent: React.FC<Props> = props => {
             <MapContainer center={center as LatLngExpression} zoom={zoomLevel}>
                 {props.isNight ? (
                     <TileLayer
-                        url="https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png?api_key=53278723-4e97-4b56-b1a2-053b2c557e6f"
+                        url={stadiaTileUrl}
                         attribution='&copy; <a href="https://www.stadiamaps.com/" target="_blank">Stadia Maps</a> &copy; <a href="https://openmaptiles.org/" target="_blank">OpenMapTiles</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                         referrerPolicy='origin-when-cross-origin'
                     />
