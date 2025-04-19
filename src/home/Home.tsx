@@ -1,13 +1,19 @@
 import React, { useState } from 'react';
-import cardAbout from '../static/homeCards/about_page.png';
-import cardData from '../static/homeCards/data_dashboard.png';
-import cardEvent from '../static/homeCards/event_tracker.png';
 import cardHome from '../static/homeCards/home_page.png';
 import cardMap from '../static/homeCards/map_view.png';
+import cardEvent from '../static/homeCards/event_tracker.png';
+import cardData from '../static/homeCards/data_dashboard.png';
+import cardAbout from '../static/homeCards/about_page.png';
+import cardHomeNight from '../static/homeCards/home_page-night.png';
+import cardMapNight from '../static/homeCards/map_view-night.png';
+import cardEventNight from '../static/homeCards/event_tracker-night.png';
+import cardDataNight from '../static/homeCards/data_dashboard-night.png';
+import cardAboutNight from '../static/homeCards/about_page-night.png';
 
 interface CardInfo {
     id: string;
     src: string;
+    srcNight: string;
     alt: string;
     label: string;
 }
@@ -16,36 +22,43 @@ const cardDataArray: CardInfo[] = [
     {
         id: 'data',
         src: cardData,
+        srcNight: cardDataNight,
         alt: 'card-data',
         label: 'data dashboard',
     },
     {
         id: 'map',
         src: cardMap,
+        srcNight: cardMapNight,
         alt: 'card-map',
         label: 'map view',
     },
     {
         id: 'event',
         src: cardEvent,
+        srcNight: cardEventNight,
         alt: 'card-event',
         label: 'event tracker',
     },
     {
         id: 'about',
         src: cardAbout,
+        srcNight: cardAboutNight,
         alt: 'card-about',
         label: 'about page',
     },
     {
         id: 'home',
         src: cardHome,
+        srcNight: cardHomeNight,
         alt: 'card-home',
         label: 'home page',
     },
 ];
 
-const CardComponent: React.FC = () => {
+type Props = { isNight: boolean };
+
+const CardComponent: React.FC<Props> = props => {
     const [selectedIndex, setSelectedIndex] = useState<number>(1);
     const numCards = cardDataArray.length;
 
@@ -104,7 +117,7 @@ const CardComponent: React.FC = () => {
                     <img
                         id={`card-${card.id}`}
                         className="card-img"
-                        src={card.src}
+                        src={props.isNight ? card.srcNight : card.src}
                         alt={card.alt}
                     />
                 </div>
@@ -123,7 +136,7 @@ const CardComponent: React.FC = () => {
     );
 };
 
-function Home() {
+function Home({ isNight }: { isNight: boolean }): React.ReactNode | null {
     return (
         <div className="data-container home">
             <div className="top-container home">
@@ -159,14 +172,14 @@ function Home() {
                                 alert information in the Event Tracker, or gain
                                 insights from aggregated statistics on the Data
                                 Dashboard. Visit the About page to learn more
-                                about me.
+                                about my work.
                             </p>
                         </div>
                     </div>
                 </div>
             </div>
             <p id="pages-deployed-p">Pages currently deployed:</p>
-            <CardComponent />
+            <CardComponent isNight={isNight} />
         </div>
     );
 }

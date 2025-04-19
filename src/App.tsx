@@ -9,7 +9,7 @@ import MapComponent from './map/Map';
 
 function App(): JSX.Element {
     const [currentPage, setCurrentPage] = useState('home');
-    const [isNight, setIsNight] = useState<boolean>(false);
+    const [isNight, setIsNight] = useState<boolean>(true);
     const [isAnimated, setIsAnimated] = useState<boolean>(true);
     const [isCollapsedLeft, setIsCollapsedLeft] = useState<boolean>(false);
 
@@ -28,17 +28,17 @@ function App(): JSX.Element {
             {(() => {
                 switch (currentPage) {
                     case 'home':
-                        return <Home />;
+                        return <Home isNight={isNight} />;
                     case 'map':
-                        return <MapComponent />;
+                        return <MapComponent isNight={isNight} />;
                     case 'events':
                         return <Events />;
                     case 'data':
                         return <DataComponent isAnimated={isAnimated} />;
                     case 'about':
-                        return <About />;
+                        return <About isNight={isNight} />;
                     default:
-                        return <Home />;
+                        return <Home isNight={isNight} />;
                 }
             })()}
             <Sidebar

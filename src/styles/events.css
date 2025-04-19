@@ -84,10 +84,10 @@
     margin-top: 3px;
     cursor: pointer;
     background: #f3f5f6;
-}
 
-.event-row:hover {
-    background: #e4f2ff;
+    &:hover {
+        background: #e4f2ff;
+    }
 }
 
 .event-row td {

@@ -1,6 +1,7 @@
 import React, { JSX } from 'react';
 
 import gitHubLogo from '../static/logos/github-mark-dark.png';
+import gitHubLogoNight from '../static/logos/github-mark-white.png';
 import gmailLogo from '../static/logos/gmail-logo.png';
 import linkedInLogo from '../static/logos/LI-In-Bug.png';
 import playLogo from '../static/logos/play2learn-logo.png';
@@ -13,6 +14,7 @@ import resume2 from '../static/resume/Ryan_Levee_resume_2025_Page_2.jpg';
 interface ContactLink {
     href: string;
     logoSrc: string;
+    logoSrcNight: string;
     logoId: string;
     logoAlt: string;
     labelText: string;
@@ -38,6 +40,7 @@ const contactLinks: ContactLink[] = [
     {
         href: 'https://github.com/ryanlevee/',
         logoSrc: gitHubLogo,
+        logoSrcNight: gitHubLogoNight,
         logoId: 'github-logo',
         logoAlt: 'GitHub Logo',
         labelText: 'GitHub',
@@ -45,6 +48,7 @@ const contactLinks: ContactLink[] = [
     {
         href: 'https://www.linkedin.com/in/ryanlevee/',
         logoSrc: linkedInLogo,
+        logoSrcNight: linkedInLogo,
         logoId: 'linkedin-logo',
         logoAlt: 'LinkedIn Logo',
         labelText: 'LinkedIn',
@@ -52,6 +56,7 @@ const contactLinks: ContactLink[] = [
     {
         href: 'mailto:ryanlevee@gmail.com',
         logoSrc: gmailLogo,
+        logoSrcNight: gmailLogo,
         logoId: 'gmail-logo',
         logoAlt: 'Gmail Logo',
         labelText: 'email: ryanlevee@gmail.com',
@@ -83,7 +88,7 @@ const resumeImages: ResumeImage[] = [
     { src: resume2, id: 'resume-img-2', alt: 'Resume Page 2' },
 ];
 
-function About(): JSX.Element {
+function About({ isNight }: { isNight: boolean }): JSX.Element {
     return (
         <div className="data-container about">
             <div className="top-container">
@@ -112,7 +117,11 @@ function About(): JSX.Element {
                                     <img
                                         id={link.logoId}
                                         className="about-logo"
-                                        src={link.logoSrc}
+                                        src={
+                                            isNight
+                                                ? link.logoSrcNight
+                                                : link.logoSrc
+                                        }
                                         alt={link.logoAlt}
                                     />
                                 </div>
@@ -130,13 +139,13 @@ function About(): JSX.Element {
                                 download my resume
                             </p>
                             {resumeImages.map(image => (
-                                <img
-                                    key={image.id}
-                                    id={image.id}
-                                    className="resume-img"
-                                    src={image.src}
-                                    alt={image.alt}
-                                />
+                                    <img
+                                        key={image.id}
+                                        id={image.id}
+                                        className="resume-img"
+                                        src={image.src}
+                                        alt={image.alt}
+                                    />
                             ))}
                         </a>
                     </div>
@@ -145,35 +154,39 @@ function About(): JSX.Element {
                     <p className="about-details-header">
                         check out my other projects
                     </p>
-                    {projects.map(project => (
-                        <a
-                            key={project.href}
-                            className="about-a projects"
-                            href={project.href}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            <div className="about-div projects">
-                                <div
-                                    id={project.logoContainerId}
-                                    className="about-logo-container"
+                    <div>
+                        <div>
+                            {projects.map(project => (
+                                <a
+                                    key={project.href}
+                                    className="about-a projects"
+                                    href={project.href}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
                                 >
-                                    <img
-                                        id={project.logoId}
-                                        className="about-logo"
-                                        src={project.logoSrc}
-                                        alt={project.logoAlt}
-                                    />
-                                </div>
-                                <p>
-                                    {project.projectName}{' '}
-                                    <span className="host-name">
-                                        ({project.hostName})
-                                    </span>
-                                </p>
-                            </div>
-                        </a>
-                    ))}
+                                    <div className="about-div projects">
+                                        <div
+                                            id={project.logoContainerId}
+                                            className="about-logo-container"
+                                        >
+                                            <img
+                                                id={project.logoId}
+                                                className="about-logo"
+                                                src={project.logoSrc}
+                                                alt={project.logoAlt}
+                                            />
+                                        </div>
+                                        <p>
+                                            {project.projectName}{' '}
+                                            <span className="host-name">
+                                                ({project.hostName})
+                                            </span>
+                                        </p>
+                                    </div>
+                                </a>
+                            ))}
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

@@ -94,7 +94,9 @@ const SidebarItem: React.FC<SidebarItemProps> = ({
                 <input
                     type="checkbox"
                     className={`sidebar-checkbox ${item.key}`}
-                    defaultChecked={item.key == 'animation' ? true : false}
+                    defaultChecked={
+                        ['animation', 'night'].includes(item.key) ? true : false
+                    }
                     checked={setCollapses()}
                 />
                 <div className="sidebar-icon">

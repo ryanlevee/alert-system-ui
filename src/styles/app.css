@@ -65,6 +65,13 @@ h4 span {
     font-weight: 600;
 }
 
+#indent-line {
+    background: #c58282;
+    width: 10px;
+    height: 100%;
+    margin-right: 0.5vw;
+}
+
 a {
     font-weight: 500;
     color: #646cff;

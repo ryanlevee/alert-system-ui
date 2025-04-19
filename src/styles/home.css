@@ -25,7 +25,7 @@
 
 .details-p-container p {
     padding-bottom: 1vh;
-    font-size: calc(.5rem + .8vh);
+    font-size: calc(0.5rem + 0.7vh);
 }
 
 #welcome-p {
@@ -40,13 +40,6 @@
 #summary-container {
     display: flex;
     margin-bottom: 1vh;
-}
-
-#indent-line {
-    background: #c58282;
-    width: 10px;
-    margin-right: 0.5vw;
-    /* border-radius: 5px; */
 }
 
 .cards-container.home {
@@ -65,7 +58,7 @@
     position: absolute;
     bottom: 0.5vh;
 
-    border: 1px solid silver;
+    border: 1px solid #b7b7b7;
     background: #f0f2f5;
 
     border-radius: 5%;
@@ -76,9 +69,10 @@
         transform 0.5s ease-in-out,
         width 0.5s ease-in-out,
         height 0.5s ease-in-out,
+        max-height 0.5s ease-in-out,
         bottom 0.25s ease-in-out,
         opacity 0.25s ease-in-out,
-        z-index 0.25s ease-in-out;
+        z-index 0.15s ease-in-out;
 
     width: calc(14vw + 14vh);
 
@@ -135,7 +129,7 @@
 }
 
 .card-container.home.card-center {
-    box-shadow: 1px 1px 3px 0 rgb(139, 139, 139);
+    box-shadow: 1px 1px 3px 0 #a8a8a8;
     left: 50%;
     transform: translateX(-50%);
     z-index: 3;

@@ -242,7 +242,9 @@ function HeatmapLayer({
     return null;
 }
 
-const MapComponent: React.FC = () => {
+type Props = { isNight: boolean };
+
+const MapComponent: React.FC<Props> = props => {
     const [isMarkersVisible, setIsMarkersVisible] = useState<boolean>(true);
     const [isHeatmapVisible, setIsHeatmapVisible] = useState<boolean>(true);
     const [filterCategory, setFilterCategory] = useState<string | null>(null);
@@ -399,10 +401,17 @@ const MapComponent: React.FC = () => {
                 </div>
             </div>
             <MapContainer center={center as LatLngExpression} zoom={zoomLevel}>
-                <TileLayer
-                    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                    attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-                />
+                {props.isNight ? (
+                    <TileLayer
+                        url="https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png"
+                        attribution='&copy; <a href="https://www.stadiamaps.com/" target="_blank">Stadia Maps</a> &copy; <a href="https://openmaptiles.org/" target="_blank">OpenMapTiles</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                    />
+                ) : (
+                    <TileLayer
+                        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                    />
+                )}
 
                 <MapEventListeners />
 
@@ -443,6 +452,7 @@ const MapComponent: React.FC = () => {
                     greenIcon={GreenIcon}
                     purpleIcon={PurpleIcon}
                     redIcon={RedIcon}
+                    isNight={props.isNight}
                 />
             </MapContainer>
         </DataContainer>

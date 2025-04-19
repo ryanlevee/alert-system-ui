@@ -1,21 +1,25 @@
-import L from "leaflet";
-import React from "react";
-import styled from "styled-components";
+import L from 'leaflet';
+import React from 'react';
+import styled from 'styled-components';
 
 interface LegendProps {
     defaultIcon: L.Icon<L.IconOptions>;
     greenIcon: L.Icon<L.IconOptions>;
     purpleIcon: L.Icon<L.IconOptions>;
     redIcon: L.Icon<L.IconOptions>;
+    isNight: boolean;
 }
 
-const LegendContainer = styled.div`
+const LegendContainer = styled.div<{
+    $isNight: boolean;
+}>`
     position: absolute;
     top: 10px;
     right: 10px;
     padding: 10px;
     box-shadow: 0 0 2px gray;
-    background: white;
+    ${props =>
+        props.$isNight ? `background: #070707` : `background: white`};
     border-radius: 4px;
     z-index: 1000; // Ensure it's above map controls
 `;
@@ -46,9 +50,11 @@ const IconImg = styled.img`
     height: 100%;
 `;
 
-const LegendLabel = styled.span`
+const LegendLabel = styled.span<{
+    $isNight: boolean;
+}>`
     font-size: 14px;
-    color: #333;
+    ${props => (props.$isNight ? `color: #bebec6` : `color: #333`)};
 `;
 
 const Legend: React.FC<LegendProps> = ({
@@ -56,9 +62,10 @@ const Legend: React.FC<LegendProps> = ({
     greenIcon,
     purpleIcon,
     redIcon,
+    isNight,
 }) => {
     return (
-        <LegendContainer>
+        <LegendContainer $isNight={isNight}>
             <LegendItem>
                 <IconPlaceholder>
                     <IconImg
@@ -66,7 +73,7 @@ const Legend: React.FC<LegendProps> = ({
                         alt="Safety Icon"
                     />
                 </IconPlaceholder>
-                <LegendLabel>Safety</LegendLabel>
+                <LegendLabel $isNight={isNight}>Safety</LegendLabel>
             </LegendItem>
             <LegendItem>
                 <IconPlaceholder>
@@ -75,7 +82,7 @@ const Legend: React.FC<LegendProps> = ({
                         alt="Weather Icon"
                     />
                 </IconPlaceholder>
-                <LegendLabel>Weather</LegendLabel>
+                <LegendLabel $isNight={isNight}>Weather</LegendLabel>
             </LegendItem>
             <LegendItem>
                 <IconPlaceholder>
@@ -84,7 +91,7 @@ const Legend: React.FC<LegendProps> = ({
                         alt="Operations Icon"
                     />
                 </IconPlaceholder>
-                <LegendLabel>Operations</LegendLabel>
+                <LegendLabel $isNight={isNight}>Operations</LegendLabel>
             </LegendItem>
             <LegendItem>
                 <IconPlaceholder>
@@ -93,7 +100,7 @@ const Legend: React.FC<LegendProps> = ({
                         alt="Disaster Icon"
                     />
                 </IconPlaceholder>
-                <LegendLabel>Disaster</LegendLabel>
+                <LegendLabel $isNight={isNight}>Disaster</LegendLabel>
             </LegendItem>
         </LegendContainer>
     );
