@@ -66,6 +66,10 @@ body:has(div.night-true) {
         color: #dadadf;
     }
 
+    a {
+        color: #9ca1ff;
+    }
+    
     .filter-container-inner div,
     .filter-container-inner button {
         filter: invert(1);
