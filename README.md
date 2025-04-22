@@ -1,14 +1,16 @@
 # Alert System UI
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 **Live Demo:** [**https://alertsystemreact.netlify.app/**](https://alertsystemreact.netlify.app/)
+
+**Related Project:** This UI complements the conceptual backend system: [Real-Time Scan and Alert System (GitHub)](https://github.com/ryanlevee/real-time-scan-and-alert-system)
 
 ## Overview
 
 Welcome to the Alert System UI! This project is a sophisticated frontend demonstration built with **React** and **TypeScript**, designed to showcase modern web development techniques and UI/UX principles. It serves as the user interface for a conceptual "Real-Time Scan and Alert System", visualizing simulated alert data in various interactive ways.
 
 This application was developed as a portfolio piece to demonstrate proficiency in frontend technologies, component design, state management, data visualization, and responsive design.
-
-**Related Project:** This UI complements the conceptual backend system: [Real-Time Scan and Alert System (GitHub)](https://github.com/ryanlevee/real-time-scan-and-alert-system)
 
 ## Key Features
 
@@ -92,10 +94,10 @@ To run this project on your local machine:
     ```
     The application should now be running on `http://localhost:5173` (or another port if 5173 is busy).
 
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/ryanlevee/alert-system-ui/blob/main/LICENSE) file for details.
+
 ## Contact
 
-Created by Ryan Levee - feel free to connect!
-
-* **GitHub:** [ryanlevee](https://github.com/ryanlevee/)
-* **LinkedIn:** [linkedin.com/in/ryanlevee/](https://www.linkedin.com/in/ryanlevee/)
-* **Email:** ryanlevee@gmail.com
+Ryan Levee - [GitHub](https://github.com/ryanlevee) | [LinkedIn](https://www.linkedin.com/in/ryanlevee/) | [Email](mailto:ryanlevee@gmail.com)
