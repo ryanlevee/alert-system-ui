@@ -8,9 +8,7 @@
 
 ## Overview
 
-Welcome to the Alert System UI! This project is a sophisticated frontend demonstration built with **React** and **TypeScript**, designed to showcase modern web development techniques and UI/UX principles. It serves as the user interface for a conceptual "Real-Time Scan and Alert System", visualizing simulated alert data in various interactive ways.
-
-This application was developed as a portfolio piece to demonstrate proficiency in frontend technologies, component design, state management, data visualization, and responsive design.
+This project is a sophisticated frontend demonstration built with **React** and **TypeScript**, designed to showcase modern web development techniques and UI/UX principles. It serves as the user interface for a conceptual "Real-Time Scan and Alert System", visualizing simulated alert data in various interactive ways. Users may navigate using the sidebar to visualize events geographically on the Map View, track detailed alert information in the Event Tracker, gain insights from aggregated statistics on the Data Dashboard, and more.
 
 ## Key Features
 
