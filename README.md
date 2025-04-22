@@ -53,8 +53,8 @@ This application demonstrates a range of features expected in a modern data-driv
 * **UI Libraries:**
     * React Select (Dropdowns)
     * React Icons (Icons)
-* **Build Tool:** Vite (implied by `import.meta.env`)
-* **Deployment:** Netlify (example badge used)
+* **Build Tool:** Vite
+* **Deployment:** Netlify
 
 ## Getting Started Locally
 
