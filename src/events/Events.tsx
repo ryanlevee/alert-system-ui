@@ -150,7 +150,10 @@ const DataComponent: React.FC = () => {
                                     isClearable={true}
                                     value={{
                                         value: displayLimit,
-                                        label: displayLimit == 3 ? 12 : displayLimit,
+                                        label:
+                                            displayLimit === '3'
+                                                ? 12
+                                                : displayLimit,
                                     }}
                                 />
                             </div>
