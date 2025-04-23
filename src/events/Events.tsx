@@ -141,7 +141,7 @@ const DataComponent: React.FC = () => {
                             <div>
                                 <Select
                                     options={[
-                                        { value: '3', label: '3 (default)' },
+                                        { value: '3', label: '12 (default)' },
                                         { value: 'All', label: 'All' },
                                     ]}
                                     id="display-limit"
@@ -150,7 +150,7 @@ const DataComponent: React.FC = () => {
                                     isClearable={true}
                                     value={{
                                         value: displayLimit,
-                                        label: displayLimit,
+                                        label: displayLimit == 3 ? 12 : displayLimit,
                                     }}
                                 />
                             </div>
