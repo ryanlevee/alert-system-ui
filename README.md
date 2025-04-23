@@ -4,7 +4,7 @@
 
 **Live Demo:** [**https://alertsystemreact.netlify.app/**](https://alertsystemreact.netlify.app/)
 
-**Related Project:** This UI complements the conceptual "Real-Time Scan and Alert System" backend: [Real-Time Scan and Alert System (GitHub)](https://github.com/ryanlevee/real-time-scan-and-alert-system)
+**Related Project:** This UI complements the conceptual "Real-Time Scan and Alert System" backend: [GitHub repo](https://github.com/ryanlevee/real-time-scan-and-alert-system)
 
 ## Overview
 
