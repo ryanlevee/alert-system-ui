@@ -1,50 +1,101 @@
-# React + TypeScript + Vite
+# Alert System UI
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-Currently, two official plugins are available:
+**Live Demo:** [**https://alertsystemreact.netlify.app/**](https://alertsystemreact.netlify.app/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**Related Project:** This UI complements the conceptual "Real-Time Scan and Alert System" backend: [Real-Time Scan and Alert System (GitHub)](https://github.com/ryanlevee/real-time-scan-and-alert-system)
 
-## Expanding the ESLint configuration
+## Overview
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+This project is a sophisticated frontend demonstration built with **React** and **TypeScript**, designed to showcase modern web development techniques and UI/UX principles. It serves as the user interface for a conceptual "Real-Time Scan and Alert System", visualizing simulated alert data in various interactive ways. Users may navigate using the sidebar to visualize events geographically on the Map View, track detailed alert information in the Event Tracker, gain insights from aggregated statistics on the Data Dashboard, and more.
 
-- Configure the top-level `parserOptions` property like this:
+## Key Features
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+This application demonstrates a range of features expected in a modern data-driven UI:
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+* **Interactive Dashboard (`/data`):**
+    * Aggregated data visualization using **Recharts** bar charts.
+    * Detailed summary cards for event types, showing severity distribution and year-over-year trends.
+    * Tabbed view for switching between category-focused and overall data summaries.
+    * Data filtering (by category, event type) and sorting (by frequency, alphabetical).
+    * Optional animations on charts.
+* **Geospatial Map View (`/map`):**
+    * Event visualization on an interactive map using **Leaflet** and `react-leaflet`.
+    * Categorized markers with distinct colors and popups displaying event details.
+    * Optional **Heatmap layer** (`keli-heatmap.js`) to show event density.
+    * Layer control for toggling markers and heatmap visibility.
+    * Dynamic map tile layers adapting to the application's theme (Light/Dark).
+    * Filtering by event category and type.
+* **Detailed Event Tracker (`/events`):**
+    * Paginated and filterable table view of individual alert events.
+    * Sortable columns for key event details.
+    * **Expandable rows** to reveal comprehensive event information without navigating away.
+    * "Expand/Collapse All" functionality for efficient data review.
+    * Filtering by event category and type, with display limits.
+* **Responsive UI & Theming:**
+    * **Collapsible Navigation:** Both left (page navigation) and right (settings) sidebars are collapsible to maximize content visibility.
+    * **Light/Dark Mode:** Application-wide theme switching affecting all components, including maps and charts.
+    * Built with responsiveness in mind (though specific breakpoints might vary).
+* **Component-Based Architecture:** Developed using reusable React components with TypeScript for type safety.
+* **About Page (`/about`):** Includes creator information, links to other projects, and a downloadable resume.
+* **Home Page (`/home`):** Introduces the application and features an interactive card carousel showcasing the different pages.
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+## Technology Stack
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+* **Core:** React, TypeScript
+* **State Management:** React Hooks (`useState`, `useEffect`, `useCallback`, `useMemo`)
+* **Styling:** CSS Modules, Styled Components
+* **Mapping:** Leaflet, React Leaflet, keli-heatmap.js (Heatmap Plugin)
+* **Charting:** Recharts
+* **UI Libraries:**
+    * React Select (Dropdowns)
+    * React Icons (Icons)
+* **Build Tool:** Vite
+* **Deployment:** Netlify
+
+## Getting Started Locally
+
+To run this project on your local machine:
+
+1.  **Prerequisites:**
+    * Node.js (v18 or later recommended)
+    * npm or yarn
+
+2.  **Clone the repository:**
+    ```bash
+    git clone [https://github.com/YOUR_USERNAME/alert-system-ui.git](https://github.com/YOUR_USERNAME/alert-system-ui.git)
+    cd alert-system-ui
+    ```
+
+3.  **Install dependencies:**
+    ```bash
+    npm install
+    # or
+    yarn install
+    ```
+
+4.  **Environment Variables:**
+    This project uses the Stadia Maps API for the dark mode map tiles. You'll need an API key.
+    * Create a `.env` file in the project root.
+    * Add your Stadia Maps API key to the `.env` file:
+        ```
+        VITE_STADIA_API_KEY=YOUR_ACTUAL_API_KEY
+        ```
+    * You can obtain a free key from [Stadia Maps](https://www.stadiamaps.com/).
+
+5.  **Run the development server:**
+    ```bash
+    npm run dev
+    # or
+    yarn dev
+    ```
+    The application should now be running on `http://localhost:5173` (or another port if 5173 is busy).
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/ryanlevee/alert-system-ui/blob/main/LICENSE) file for details.
+
+## Contact
+
+Ryan Levee - [GitHub](https://github.com/ryanlevee) | [LinkedIn](https://www.linkedin.com/in/ryanlevee/) | [Email](mailto:ryanlevee@gmail.com)
