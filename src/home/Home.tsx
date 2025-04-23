@@ -67,12 +67,12 @@ const CardComponent: React.FC<Props> = props => {
     };
 
     const handlePreviousClick = () => {
-        const newIndex = (selectedIndex - 1 + numCards) % numCards;
+        const newIndex = (selectedIndex + 1) % numCards;
         setSelectedIndex(newIndex);
     };
 
     const handleNextClick = () => {
-        const newIndex = (selectedIndex + 1) % numCards;
+        const newIndex = (selectedIndex - 1 + numCards) % numCards;
         setSelectedIndex(newIndex);
     };
 
