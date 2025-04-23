@@ -152,7 +152,7 @@ const DataComponent: React.FC = () => {
                                         value: displayLimit,
                                         label:
                                             displayLimit === '3'
-                                                ? 12
+                                                ? '12'
                                                 : displayLimit,
                                     }}
                                 />
