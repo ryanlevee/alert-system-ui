@@ -7,6 +7,7 @@ body:has(.about-resume-container.zoom) {
     .about-projects-container {
         opacity: 0;
         transition: opacity 0.5s ease-in-out;
+        z-index: 0;
     }
 }
 
@@ -60,7 +61,7 @@ body:has(.about-resume-container.zoom) {
         position: fixed;
         top: 0;
         left: 0;
-        background: rgb(56, 58, 63);
+        background: rgb(60, 62, 66);
         z-index: 2;
         height: 100vh;
         width: 100vw;
