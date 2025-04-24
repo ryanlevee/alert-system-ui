@@ -1,4 +1,4 @@
-import React, { JSX } from 'react';
+import React, { JSX, useCallback, useState } from 'react';
 
 import gitHubLogo from '../static/logos/github-mark-dark.png';
 import gitHubLogoNight from '../static/logos/github-mark-white.png';
@@ -8,8 +8,8 @@ import playLogo from '../static/logos/play2learn-logo.png';
 import radarLogo from '../static/logos/weather-radar_blue.png';
 
 import resumePdf from '../static/resume/Ryan_Levee_resume_2025.pdf';
-import resume1 from '../static/resume/Ryan_Levee_resume_2025_Page_1.jpg';
-import resume2 from '../static/resume/Ryan_Levee_resume_2025_Page_2.jpg';
+import resume1 from '../static/resume/Ryan_Levee_resume_2025_Page_1-resize.png';
+import resume2 from '../static/resume/Ryan_Levee_resume_2025_Page_2-resize.png';
 
 interface ContactLink {
     href: string;
@@ -84,11 +84,26 @@ const projects: ProjectLink[] = [
 ];
 
 const resumeImages: ResumeImage[] = [
-    { src: resume1, id: 'resume-img-1', alt: 'Resume Page 1' },
     { src: resume2, id: 'resume-img-2', alt: 'Resume Page 2' },
+    { src: resume1, id: 'resume-img-1', alt: 'Resume Page 1' },
 ];
 
 function About({ isNight }: { isNight: boolean }): JSX.Element {
+    const [isZoomed, setIsZoomed] = useState<boolean>(false);
+
+    const handleResumeClick = useCallback(
+        (e: MouseEvent) => {
+            setIsZoomed(!isZoomed);
+
+            if (!isZoomed) {
+                e.currentTarget.parentElement.classList.add('zoom');
+            } else {
+                e.currentTarget.parentElement.classList.remove('zoom');
+            }
+        },
+        [isZoomed]
+    );
+
     return (
         <div className="data-container about">
             <div className="top-container">
@@ -130,24 +145,37 @@ function About({ isNight }: { isNight: boolean }): JSX.Element {
                         ))}
                     </div>
                     <div className="about-resume-container">
-                        <a
-                            href={resumePdf}
-                            download="Ryan_Levee_resume_2025.pdf"
-                            className="resume-download-link"
+                        <div
+                            id="about-overlay"
+                            onClick={handleResumeClick}
+                        ></div>
+                        <p
+                            className="about-details-header resume"
+                            onClick={handleResumeClick}
                         >
-                            <p className="about-details-header">
+                            view my resume
+                        </p>
+                        <div
+                            id="resume-container-inner"
+                            onClick={handleResumeClick}
+                        >
+                            <a
+                                href={resumePdf}
+                                download="Ryan_Levee_resume_2025.pdf"
+                                className="resume-download-link"
+                            >
                                 download my resume
-                            </p>
+                            </a>
                             {resumeImages.map(image => (
-                                    <img
-                                        key={image.id}
-                                        id={image.id}
-                                        className="resume-img"
-                                        src={image.src}
-                                        alt={image.alt}
-                                    />
+                                <img
+                                    key={image.id}
+                                    id={image.id}
+                                    className="resume-img"
+                                    src={image.src}
+                                    alt={image.alt}
+                                />
                             ))}
-                        </a>
+                        </div>
                     </div>
                 </div>
                 <div className="about-projects-container">

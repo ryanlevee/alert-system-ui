@@ -122,7 +122,7 @@ const NavbarContainer = styled.div<{ $collapsed: boolean }>`
     transition: width 0.3s ease-out;
     padding-top: 20px;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-    z-index: 100;
+    z-index: 1;
 `;
 
 const CollapseToggleButton = styled.button<{ $collapsed: boolean }>`
