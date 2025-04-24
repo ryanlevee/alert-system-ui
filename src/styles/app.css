@@ -1,3 +1,7 @@
+.header-home-click {
+    cursor: pointer;
+}
+
 .page-title {
     transform: translateX(-1vw);
     border-bottom: 3px solid rgb(197, 130, 130);

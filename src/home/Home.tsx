@@ -9,6 +9,7 @@ import cardMapNight from '../static/homeCards/map_view-night.png';
 import cardEventNight from '../static/homeCards/event_tracker-night.png';
 import cardDataNight from '../static/homeCards/data_dashboard-night.png';
 import cardAboutNight from '../static/homeCards/about_page-night.png';
+import PageHeader from '../common/PageHeader';
 
 interface CardInfo {
     id: string;
@@ -136,16 +137,30 @@ const CardComponent: React.FC<Props> = props => {
     );
 };
 
-function Home({ isNight }: { isNight: boolean }): React.ReactNode | null {
+function Home({
+    isNight,
+    setCurrentPage,
+}: {
+    isNight: boolean;
+    setCurrentPage: (page: string) => void;
+}): React.ReactNode | null {
     return (
         <div className="data-container home">
             <div className="top-container home">
-                <div className="headers-container">
+                <PageHeader
+                    page={{
+                        title: 'Home Page',
+                        key: 'home',
+                        label: 'Alert System UI',
+                    }}
+                    setCurrentPage={setCurrentPage}
+                />
+                {/* <div className="headers-container">
                     <h4>
                         React Demo &#8250; <span>Home Page</span>
                     </h4>
                     <h2 className="page-title">Alert System UI</h2>
-                </div>
+                </div> */}
                 <div className="details-p-container">
                     <p id="welcome-p">Welcome.</p>
 

@@ -24,21 +24,45 @@ function App(): JSX.Element {
                 setIsCollapsedLeft={setIsCollapsedLeft}
                 isCollapsedLeft={isCollapsedLeft}
             ></Navbar>
-
             {(() => {
                 switch (currentPage) {
                     case 'home':
-                        return <Home isNight={isNight} />;
+                        return (
+                            <Home
+                                setCurrentPage={setCurrentPage}
+                                isNight={isNight}
+                            />
+                        );
                     case 'map':
-                        return <MapComponent isNight={isNight} />;
+                        return (
+                            <MapComponent
+                                setCurrentPage={setCurrentPage}
+                                isNight={isNight}
+                            />
+                        );
                     case 'events':
-                        return <Events />;
+                        return <Events setCurrentPage={setCurrentPage} />;
                     case 'data':
-                        return <DataComponent isAnimated={isAnimated} />;
+                        return (
+                            <DataComponent
+                                setCurrentPage={setCurrentPage}
+                                isAnimated={isAnimated}
+                            />
+                        );
                     case 'about':
-                        return <About isNight={isNight} />;
+                        return (
+                            <About
+                                setCurrentPage={setCurrentPage}
+                                isNight={isNight}
+                            />
+                        );
                     default:
-                        return <Home isNight={isNight} />;
+                        return (
+                            <Home
+                                setCurrentPage={setCurrentPage}
+                                isNight={isNight}
+                            />
+                        );
                 }
             })()}
             <Sidebar

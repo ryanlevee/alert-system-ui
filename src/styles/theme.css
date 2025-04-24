@@ -67,7 +67,8 @@ body:has(div.night-true) {
     }
 
     a {
-        color: #9ca1ff;
+        /* color: #9ca1ff; */
+        color: #A3AAFF;
     }
     
     .filter-container-inner div,

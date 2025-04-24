@@ -10,6 +10,7 @@ import radarLogo from '../static/logos/weather-radar_blue.png';
 import resumePdf from '../static/resume/Ryan_Levee_resume_2025.pdf';
 import resume1 from '../static/resume/Ryan_Levee_resume_2025_Page_1-resize.png';
 import resume2 from '../static/resume/Ryan_Levee_resume_2025_Page_2-resize.png';
+import PageHeader from '../common/PageHeader';
 
 interface ContactLink {
     href: string;
@@ -88,7 +89,13 @@ const resumeImages: ResumeImage[] = [
     { src: resume1, id: 'resume-img-1', alt: 'Resume Page 1' },
 ];
 
-function About({ isNight }: { isNight: boolean }): JSX.Element {
+function About({
+    isNight,
+    setCurrentPage,
+}: {
+    isNight: boolean;
+    setCurrentPage: (page: string) => void;
+}): JSX.Element {
     const [isZoomed, setIsZoomed] = useState<boolean>(false);
 
     const handleResumeClick = useCallback(
@@ -107,12 +114,10 @@ function About({ isNight }: { isNight: boolean }): JSX.Element {
     return (
         <div className="data-container about">
             <div className="top-container">
-                <div className="headers-container">
-                    <h4>
-                        React Demo &#8250; <span>About Page</span>
-                    </h4>
-                    <h2 className="page-title">about</h2>
-                </div>
+                <PageHeader
+                    page={{ title: 'About Page', key: 'about', label: 'about' }}
+                    setCurrentPage={setCurrentPage}
+                />
             </div>
             <div className="about-container">
                 <div className="about-details-container">

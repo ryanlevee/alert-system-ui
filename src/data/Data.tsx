@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import { EventCategoryName, eventData } from '../interfaces/interfaces';
 import RenderCards from './Cards';
 import RenderGraph from './Graph';
+import PageHeader from '../common/PageHeader';
 
 const DataContainer = styled.div`
     padding: 20px;
@@ -46,8 +47,10 @@ const Tab = styled.div<{ $activeTab: boolean }>`
 
 function DataComponent({
     isAnimated,
+    setCurrentPage,
 }: {
     isAnimated: boolean;
+    setCurrentPage: (page: string) => void;
 }): React.ReactNode | null {
     const [sortBy, setSortBy] = useState<string | null>(null);
     const [filterCategory, setFilterCategory] =
@@ -147,12 +150,14 @@ function DataComponent({
     return (
         <DataContainer className="data-container">
             <div className="top-container">
-                <div className="headers-container">
-                    <h4>
-                        React Demo &#8250; <span>Data Dashboard</span>
-                    </h4>
-                    <h2 className="page-title">data</h2>
-                </div>
+                <PageHeader
+                    page={{
+                        title: 'Data Dashboard',
+                        key: 'data',
+                        label: 'data',
+                    }}
+                    setCurrentPage={setCurrentPage}
+                />
                 <div className="select-container">
                     <div id="filter-container-outer">
                         <div className="filter-container-inner">

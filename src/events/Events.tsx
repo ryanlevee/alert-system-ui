@@ -3,12 +3,15 @@ import Select, { ActionMeta, SingleValue } from 'react-select';
 import styled from 'styled-components';
 import { EventCategoryName, eventData } from '../interfaces/interfaces';
 import RenderList from './List';
+import PageHeader from '../common/PageHeader';
 
 const DataContainer = styled.div`
     padding: 20px;
 `;
 
-const DataComponent: React.FC = () => {
+type Props = { setCurrentPage: (page: string) => void };
+
+const DataComponent: React.FC<Props> = props => {
     const [displayLimit, setDisplayLimit] = useState<string | null>('3');
     const [filterCategory, setFilterCategory] =
         useState<EventCategoryName>(null);
@@ -93,12 +96,14 @@ const DataComponent: React.FC = () => {
     return (
         <DataContainer className="data-container">
             <div className="top-container">
-                <div className="headers-container">
-                    <h4>
-                        React Demo &#8250; <span>Event Tracker</span>
-                    </h4>
-                    <h2 className="page-title">events</h2>
-                </div>
+                <PageHeader
+                    page={{
+                        title: 'Event Tracker',
+                        key: 'events',
+                        label: 'events',
+                    }}
+                    setCurrentPage={props.setCurrentPage}
+                />
 
                 <div className="select-container">
                     <div id="filter-container-outer">

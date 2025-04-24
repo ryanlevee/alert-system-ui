@@ -29,6 +29,7 @@ import {
     EventCategoryName,
     eventData,
 } from '../interfaces/interfaces';
+import PageHeader from '../common/PageHeader';
 
 const stadiaApiKey = import.meta.env.VITE_STADIA_API_KEY;
 const stadiaTileUrl = `https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png?api_key=${stadiaApiKey}`;
@@ -245,7 +246,7 @@ function HeatmapLayer({
     return null;
 }
 
-type Props = { isNight: boolean };
+type Props = { isNight: boolean; setCurrentPage: (page: string) => void };
 
 const MapComponent: React.FC<Props> = props => {
     const [isMarkersVisible, setIsMarkersVisible] = useState<boolean>(true);
@@ -346,12 +347,14 @@ const MapComponent: React.FC<Props> = props => {
     return (
         <DataContainer className="data-container">
             <div className="top-container">
-                <div className="headers-container">
-                    <h4>
-                        React Demo &#8250; <span>Map View</span>
-                    </h4>
-                    <h2 className="page-title">map</h2>
-                </div>
+                <PageHeader
+                    page={{
+                        title: 'Map View',
+                        key: 'map',
+                        label: 'map',
+                    }}
+                    setCurrentPage={props.setCurrentPage}
+                />
                 <div className="select-container">
                     <div id="filter-container-outer">
                         <div className="filter-container-inner">
@@ -408,7 +411,7 @@ const MapComponent: React.FC<Props> = props => {
                     <TileLayer
                         url={stadiaTileUrl}
                         attribution='&copy; <a href="https://www.stadiamaps.com/" target="_blank">Stadia Maps</a> &copy; <a href="https://openmaptiles.org/" target="_blank">OpenMapTiles</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-                        referrerPolicy='origin-when-cross-origin'
+                        referrerPolicy="origin-when-cross-origin"
                     />
                 ) : (
                     <TileLayer
