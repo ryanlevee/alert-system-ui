@@ -163,29 +163,6 @@ function DataComponent({
                         <div className="filter-container-inner">
                             <div>
                                 <Select
-                                    options={[
-                                        {
-                                            value: 'Frequency',
-                                            label: 'Frequency',
-                                        },
-                                        {
-                                            value: 'Alphabetical',
-                                            label: 'Alphabetical',
-                                        },
-                                    ]}
-                                    id="sort-by"
-                                    onChange={handleSortChange}
-                                    placeholder="Sort by..."
-                                    isClearable={true}
-                                    value={
-                                        sortBy
-                                            ? { value: sortBy, label: sortBy }
-                                            : null
-                                    }
-                                />
-                            </div>
-                            <div>
-                                <Select
                                     options={availableCategories}
                                     id="category-select"
                                     onChange={handleCategoryChange}
@@ -217,6 +194,29 @@ function DataComponent({
                                                   value: filterEventType,
                                                   label: filterEventType,
                                               }
+                                            : null
+                                    }
+                                />
+                            </div>
+                            <div>
+                                <Select
+                                    options={[
+                                        {
+                                            value: 'Frequency',
+                                            label: 'Frequency',
+                                        },
+                                        {
+                                            value: 'Alphabetical',
+                                            label: 'Alphabetical',
+                                        },
+                                    ]}
+                                    id="sort-by"
+                                    onChange={handleSortChange}
+                                    placeholder="Sort by..."
+                                    isClearable={true}
+                                    value={
+                                        sortBy
+                                            ? { value: sortBy, label: sortBy }
                                             : null
                                     }
                                 />
