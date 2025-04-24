@@ -1,9 +1,9 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import Select, { ActionMeta, SingleValue } from 'react-select';
 import styled from 'styled-components';
+import PageHeader from '../common/PageHeader';
 import { EventCategoryName, eventData } from '../interfaces/interfaces';
 import RenderList from './List';
-import PageHeader from '../common/PageHeader';
 
 const DataContainer = styled.div`
     padding: 20px;

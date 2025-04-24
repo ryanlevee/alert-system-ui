@@ -1,13 +1,13 @@
-import { IconType } from "react-icons/lib";
-import * as i from "../static/icons";
+import { IconType } from 'react-icons/lib';
+import * as i from '../static/icons';
 
 const ico = {
-    "Civil Unrest": i.FaPeopleCarryBox,
-    "Public Disturbance": i.FaPeopleRobbery,
-    "Suspicious Activity": i.PiDetectiveFill,
-    "Traffic Accident": i.FaCarSide,
-    "Chemical Spill": i.PiRadioactiveFill,
-    "Elevated Threat Level": i.FaArrowCircleUp,
+    'Civil Unrest': i.FaPeopleCarryBox,
+    'Public Disturbance': i.FaPeopleRobbery,
+    'Suspicious Activity': i.PiDetectiveFill,
+    'Traffic Accident': i.FaCarSide,
+    'Chemical Spill': i.PiRadioactiveFill,
+    'Elevated Threat Level': i.FaArrowCircleUp,
 
     Wildfire: i.FaFireAlt,
     Flood: i.FaHouseFloodWater,

@@ -1,4 +1,4 @@
-import React, { JSX, useCallback, useState } from 'react';
+import React, { useCallback } from 'react';
 
 interface Page {
     title: string;

@@ -1,10 +1,10 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import Select, { ActionMeta, SingleValue } from 'react-select';
 import styled from 'styled-components';
+import PageHeader from '../common/PageHeader';
 import { EventCategoryName, eventData } from '../interfaces/interfaces';
 import RenderCards from './Cards';
 import RenderGraph from './Graph';
-import PageHeader from '../common/PageHeader';
 
 const DataContainer = styled.div`
     padding: 20px;

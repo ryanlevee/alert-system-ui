@@ -18,8 +18,7 @@ const LegendContainer = styled.div<{
     right: 10px;
     padding: 10px;
     box-shadow: 0 0 2px gray;
-    ${props =>
-        props.$isNight ? `background: #070707` : `background: white`};
+    ${props => (props.$isNight ? `background: #070707` : `background: white`)};
     border-radius: 4px;
     z-index: 1000; // Ensure it's above map controls
 `;

@@ -7,10 +7,10 @@ import linkedInLogo from '../static/logos/LI-In-Bug.png';
 import playLogo from '../static/logos/play2learn-logo.png';
 import radarLogo from '../static/logos/weather-radar_blue.png';
 
+import PageHeader from '../common/PageHeader';
 import resumePdf from '../static/resume/Ryan_Levee_resume_2025.pdf';
 import resume1 from '../static/resume/Ryan_Levee_resume_2025_Page_1-resize.png';
 import resume2 from '../static/resume/Ryan_Levee_resume_2025_Page_2-resize.png';
-import PageHeader from '../common/PageHeader';
 
 interface ContactLink {
     href: string;
@@ -99,14 +99,17 @@ function About({
     const [isZoomed, setIsZoomed] = useState<boolean>(false);
 
     const handleResumeClick = useCallback(
-        (e: MouseEvent) => {
+        (e: React.MouseEvent) => {
             setIsZoomed(!isZoomed);
+            const target = e.currentTarget as HTMLInputElement;
+            const parent = target.parentElement as HTMLDivElement;
 
             if (!isZoomed) {
-                e.currentTarget.parentElement.classList.add('zoom');
+                parent.classList.add('zoom');
             } else {
-                e.currentTarget.parentElement.classList.remove('zoom');
+                parent.classList.remove('zoom');
             }
+            return undefined;
         },
         [isZoomed]
     );

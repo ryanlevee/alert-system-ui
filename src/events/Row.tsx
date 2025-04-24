@@ -1,8 +1,8 @@
-import React, { memo, useState, useCallback, useEffect } from 'react';
+import React, { memo, useCallback, useEffect, useState } from 'react';
+import styled from 'styled-components';
+import ico from '../common/iconMapping';
 import { EventCategory, EventCategoryName } from '../interfaces/interfaces';
 import { ColumnIndex } from './List';
-import ico from '../common/iconMapping';
-import styled from 'styled-components';
 
 export const EventFooter = styled.div<{
     $isClicked: boolean;

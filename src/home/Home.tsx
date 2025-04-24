@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
-import cardHome from '../static/homeCards/home_page.png';
-import cardMap from '../static/homeCards/map_view.png';
-import cardEvent from '../static/homeCards/event_tracker.png';
-import cardData from '../static/homeCards/data_dashboard.png';
-import cardAbout from '../static/homeCards/about_page.png';
-import cardHomeNight from '../static/homeCards/home_page-night.png';
-import cardMapNight from '../static/homeCards/map_view-night.png';
-import cardEventNight from '../static/homeCards/event_tracker-night.png';
-import cardDataNight from '../static/homeCards/data_dashboard-night.png';
-import cardAboutNight from '../static/homeCards/about_page-night.png';
 import PageHeader from '../common/PageHeader';
+import cardAboutNight from '../static/homeCards/about_page-night.png';
+import cardAbout from '../static/homeCards/about_page.png';
+import cardDataNight from '../static/homeCards/data_dashboard-night.png';
+import cardData from '../static/homeCards/data_dashboard.png';
+import cardEventNight from '../static/homeCards/event_tracker-night.png';
+import cardEvent from '../static/homeCards/event_tracker.png';
+import cardHomeNight from '../static/homeCards/home_page-night.png';
+import cardHome from '../static/homeCards/home_page.png';
+import cardMapNight from '../static/homeCards/map_view-night.png';
+import cardMap from '../static/homeCards/map_view.png';
 
 interface CardInfo {
     id: string;

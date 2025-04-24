@@ -24,12 +24,12 @@ import Select, { ActionMeta, SingleValue } from 'react-select';
 import Legend from './Legend';
 
 import styled from 'styled-components';
+import PageHeader from '../common/PageHeader';
 import {
     EventCategory,
     EventCategoryName,
     eventData,
 } from '../interfaces/interfaces';
-import PageHeader from '../common/PageHeader';
 
 const stadiaApiKey = import.meta.env.VITE_STADIA_API_KEY;
 const stadiaTileUrl = `https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png?api_key=${stadiaApiKey}`;

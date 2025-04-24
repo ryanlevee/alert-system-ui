@@ -1,5 +1,5 @@
-import data from '../../backend/data.json';
 import categoryIndex from '../../backend/categoryIndex.json';
+import data from '../../backend/data.json';
 
 export interface EventDetailsBase {
     uid: number;
@@ -107,6 +107,6 @@ export type EventCategory =
 // export const eventData = Object.entries(data).sort(([itemA, itemB]) => itemA.localeCompare(itemB))
 //  as EventCategory[];
 
-export const eventData = data as EventCategory[]
+export const eventData = data as EventCategory[];
 
-export const categories = categoryIndex
+export const categories = categoryIndex;
