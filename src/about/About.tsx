@@ -73,15 +73,15 @@ const projects: ProjectLink[] = [
         projectName: 'NEXRAD Mapbox Radar Viewer',
         hostName: 'Netlify',
     },
-    {
-        href: 'https://ryanlevee.pythonanywhere.com/',
-        logoSrc: playLogo,
-        logoId: 'play-logo',
-        logoAlt: 'Play2Learn Logo',
-        projectName: 'Play2Learn App',
-        hostName: 'PythonAnywhere',
-        logoContainerId: 'play-logo-container',
-    },
+    // {
+    //     href: 'https://ryanlevee.pythonanywhere.com/',
+    //     logoSrc: playLogo,
+    //     logoId: 'play-logo',
+    //     logoAlt: 'Play2Learn Logo',
+    //     projectName: 'Play2Learn App',
+    //     hostName: 'PythonAnywhere',
+    //     logoContainerId: 'play-logo-container',
+    // },
 ];
 
 const resumeImages: ResumeImage[] = [
